@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040">
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="129dp"
+        android:layout_height="85dp"
+        android:backgroundTint="?attr/colorError"
+        android:fontFamily="@font/brawler"
+        android:text="EXIT"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="630dp" />
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="327dp"
+        android:layout_height="160dp"
+        android:text="11:45"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="96sp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

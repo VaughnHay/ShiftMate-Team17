@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040">
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="159dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Save"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="159dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Back"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="415dp"
+        android:layout_height="78dp"
+        android:background="#1E3848"
+        android:backgroundTint="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:hint="Add Task"
+
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="292dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FEFEFE"
+        android:hint="Task Title"
+        android:fontFamily="@font/brawler"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="126dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FEFEFE"
+        android:hint="Task Deadline"
+        android:fontFamily="@font/brawler"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="393dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="293dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#FEFEFE"
+        android:hint="Required Time"
+        android:fontFamily="@font/brawler"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="292dp"
+        android:layout_height="85dp"
+        android:backgroundTint="#FEFEFE"
+        android:hint="Task Description"
+        android:fontFamily="@font/brawler"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="282dp" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ShiftMateLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_constraintStart_toEndOf="@id/logoImageView"
+        android:layout_constraintTop_toTopOf="@id/logoImageView"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/primary_text_dark_nodisable"
+        android:fontFamily="@font/brawler"
+        android:text="ShiftMate"
+        android:textColor="@android:color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="212dp"
+        android:layout_height="101dp"
+        android:background="#F9F9F9"
+        android:dateTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="393dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

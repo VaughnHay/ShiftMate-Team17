@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="134dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Verify"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="439dp" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="134dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Clock-in"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="583dp" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="134dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Back"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="656dp" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="212dp"
+        android:layout_height="101dp"
+        android:background="#F9F9F9"
+        android:dateTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="204dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FEFEFE"
+        android:fontFamily="@font/brawler"
+        android:hint="Time"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="363dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="204dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FEFEFE"
+        android:fontFamily="@font/brawler"
+        android:hint="Location"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="502dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="204dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FEFEFE"
+        android:fontFamily="@font/brawler"
+        android:hint="Employee Code"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="119dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FEFEFE"
+        android:fontFamily="@font/brawler"
+        android:hint="Date"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ShiftMateLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="415dp"
+        android:layout_height="78dp"
+        android:background="#1E3848"
+        android:backgroundTint="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:hint="Clock-in"
+
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="206dp"
+        android:layout_height="164dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="551dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

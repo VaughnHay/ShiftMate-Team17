@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ShiftMate</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="email">Email/Username</string>
+    <string name="login">Login</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="focus">Focus</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="quaterly_report">Quaterly Report</string>
+</resources>

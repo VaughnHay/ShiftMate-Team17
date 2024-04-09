@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040">
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="159dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Back"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="660dp" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="413dp"
+        android:layout_height="115dp"
+        android:background="#1E3848"
+        android:backgroundTint="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:hint="Leader Board"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="139dp" />
+
+    <TextView
+        android:id="@+id/welcomeTextView"
+        tools:ignore="HardcodedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_constraintStart_toEndOf="@id/logoImageView"
+        android:layout_constraintTop_toTopOf="@id/logoImageView"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/brawler"
+        android:text="ShiftMate"
+        android:textColor="@android:color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ShiftMateLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="112dp"
+        android:layout_height="108dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="272dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressBackgroundTint="@color/black"
+        android:progressTint="#FFC107"
+        android:rating="3.5"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="423dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressBackgroundTint="@color/black"
+        android:progressTint="#FFC107"
+        android:rating="2"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="547dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressBackgroundTint="@color/black"
+        android:progressTint="#FFC107"
+        android:rating="4.5"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="298dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="112dp"
+        android:layout_height="108dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="526dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="112dp"
+        android:layout_height="108dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="396dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

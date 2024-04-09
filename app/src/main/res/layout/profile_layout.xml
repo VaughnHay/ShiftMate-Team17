@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#404040"
+        tools:layout_editor_absoluteX="-86dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_constraintStart_toStartOf="parent"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ShiftMateLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="178dp"
+            android:layout_height="62dp"
+            android:backgroundTint="#1D364A"
+            android:fontFamily="@font/brawler"
+            android:text="Save"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="217dp"
+            tools:layout_editor_absoluteY="631dp" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="178dp"
+            android:layout_height="62dp"
+            android:backgroundTint="#1D364A"
+            android:fontFamily="@font/brawler"
+            android:text="Close"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="631dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="415dp"
+            android:layout_height="78dp"
+            android:background="#1E3848"
+            android:backgroundTint="#1E3848"
+            android:fontFamily="@font/brawler"
+            android:hint="Profile"
+
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="34sp"
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="153dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="292dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FEFEFE"
+            android:fontFamily="@font/brawler"
+            android:hint="Strider"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="292dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FEFEFE"
+            android:fontFamily="@font/brawler"
+            android:hint="**************"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="571dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="292dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FEFEFE"
+            android:fontFamily="@font/brawler"
+            android:hint="sam@gmail.com"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="496dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="292dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FEFEFE"
+            android:fontFamily="@font/brawler"
+            android:hint="Sam"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="264dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="292dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FEFEFE"
+            android:fontFamily="@font/brawler"
+            android:hint="Senior Manager"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
