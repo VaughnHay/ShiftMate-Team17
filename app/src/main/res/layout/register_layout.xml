@@ -11,6 +11,8 @@
         android:id="@+id/nameEditText"
         android:layout_width="410dp"
         android:layout_height="103dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="1dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
@@ -21,8 +23,9 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -34,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ShiftMateLogo" />
+        app:srcCompat="@drawable/shiftmatelogo" />
 
     <Button
         android:id="@+id/registerButton"
