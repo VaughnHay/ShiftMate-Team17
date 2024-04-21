@@ -72,6 +72,7 @@
         android:layout_constraintTop_toBottomOf="@id/logoImageView"
         android:layout_constraintEnd_toEndOf="parent"
         android:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="140dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
@@ -82,8 +83,9 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="281dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -102,8 +104,9 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="194dp" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -112,6 +115,7 @@
         android:layout_constraintTop_toBottomOf="@id/logoImageView"
         android:layout_constraintEnd_toEndOf="parent"
         android:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="228dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
@@ -122,8 +126,9 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="355dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -132,6 +137,7 @@
         android:layout_constraintTop_toBottomOf="@id/logoImageView"
         android:layout_constraintEnd_toEndOf="parent"
         android:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="307dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
@@ -142,7 +148,8 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="437dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
