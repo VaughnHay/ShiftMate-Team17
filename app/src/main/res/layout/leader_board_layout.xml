@@ -10,16 +10,19 @@
         android:id="@+id/registerButton"
         android:layout_width="159dp"
         android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="27dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Back"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="660dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="413dp"
         android:layout_height="115dp"
+        android:layout_marginTop="23dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
@@ -30,8 +33,9 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <TextView
         android:id="@+id/welcomeTextView"
@@ -58,7 +62,7 @@
         android:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/ShiftMateLogo"
+        android:src="@drawable/shiftmatelogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,53 +72,64 @@
         android:id="@+id/imageView4"
         android:layout_width="112dp"
         android:layout_height="108dp"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="272dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText"
         tools:srcCompat="@tools:sample/avatars" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
         android:progressBackgroundTint="@color/black"
         android:progressTint="#FFC107"
         android:rating="3.5"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="423dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="56dp"
         android:progressBackgroundTint="@color/black"
         android:progressTint="#FFC107"
         android:rating="2"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="547dp" />
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="21dp"
         android:progressBackgroundTint="@color/black"
         android:progressTint="#FFC107"
         android:rating="4.5"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="298dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="112dp"
         android:layout_height="108dp"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="526dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="112dp"
         android:layout_height="108dp"
-        tools:layout_editor_absoluteX="38dp"
+        android:layout_marginStart="38dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="396dp"
         tools:srcCompat="@tools:sample/avatars" />
 

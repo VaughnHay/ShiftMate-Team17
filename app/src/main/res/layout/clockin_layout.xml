@@ -10,53 +10,74 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="16dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="142dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logoImageView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="134dp"
         android:layout_height="44dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Verify"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:layout_constraintVertical_bias="0.006" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="134dp"
         android:layout_height="44dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Clock-in"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="583dp" />
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapView" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="134dp"
         android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="44dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Back"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="656dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapView" />
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="212dp"
         android:layout_height="101dp"
+        android:layout_marginTop="18dp"
         android:background="#F9F9F9"
         android:dateTextAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="240dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="204dp"
         android:layout_height="45dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="166dp"
         android:backgroundTint="#FEFEFE"
         android:fontFamily="@font/brawler"
         android:hint="Time"
@@ -64,13 +85,17 @@
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="363dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="204dp"
         android:layout_height="45dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="166dp"
         android:backgroundTint="#FEFEFE"
         android:fontFamily="@font/brawler"
         android:hint="Location"
@@ -78,13 +103,17 @@
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="502dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="204dp"
         android:layout_height="45dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#FEFEFE"
         android:fontFamily="@font/brawler"
         android:hint="Employee Code"
@@ -92,13 +121,17 @@
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="438dp" />
+        app:layout_constraintEnd_toStartOf="@+id/registerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="119dp"
         android:layout_height="48dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="23dp"
         android:backgroundTint="#FEFEFE"
         android:fontFamily="@font/brawler"
         android:hint="Date"
@@ -106,8 +139,9 @@
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="240dp" />
+        app:layout_constraintEnd_toStartOf="@+id/calendarView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -117,7 +151,7 @@
         android:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/ShiftMateLogo"
+        android:src="@drawable/shiftmatelogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,27 +159,34 @@
 
     <EditText
         android:id="@+id/nameEditText"
-        android:layout_width="415dp"
-        android:layout_height="78dp"
+        android:layout_width="406dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="1dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
-        android:hint="Clock-in"
 
+        android:hint="Clock-in"
         android:inputType="text"
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="206dp"
         android:layout_height="164dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="551dp" />
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/registerButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
