@@ -13,7 +13,7 @@
     <!-- com.example.shiftmateOPSC.Task list -->
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Task2btn"
         android:layout_width="278dp"
         android:layout_height="92dp"
         android:layout_marginStart="66dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addTaskButton" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/Task2txt"
         android:layout_width="112dp"
         android:layout_height="77dp"
         android:ems="10"
@@ -39,7 +39,7 @@
         tools:layout_editor_absoluteY="418dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Task2Date_Timetxt"
         android:layout_width="89dp"
         android:layout_height="40dp"
         android:fontFamily="@font/brawler"
@@ -68,7 +68,7 @@
         tools:layout_editor_absoluteY="357dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Task3btn"
         android:layout_width="278dp"
         android:layout_height="92dp"
         android:backgroundTint="@color/material_dynamic_neutral50"
@@ -76,18 +76,20 @@
         tools:layout_editor_absoluteY="570dp" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/Task3Date_Timetxt"
+        android:layout_width="89dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/brawler"
-        android:text="30/05/2024"
+        android:text="12/03/2024
+
+8hrs"
         android:textColor="@color/white"
         android:textSize="14dp"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="588dp" />
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="596dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/Task3txt"
         android:layout_width="112dp"
         android:layout_height="77dp"
         android:ems="10"
@@ -98,18 +100,6 @@
         android:textSize="24dp"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="576dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="81dp"
-        android:layout_height="22dp"
-        android:fontFamily="@font/brawler"
-        android:padding="@android:dimen/dialog_min_width_major"
-        android:text="30 mins"
-        android:textColor="@color/white"
-        android:textSize="14dp"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="623dp" />
 
     <ProgressBar
         android:id="@+id/progressBar6"
@@ -234,7 +224,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Task1btn"
         android:layout_width="278dp"
         android:layout_height="92dp"
         android:layout_marginStart="66dp"
@@ -247,7 +237,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addTaskButton" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Task1Date_Timetxt"
         android:layout_width="89dp"
         android:layout_height="40dp"
         android:fontFamily="@font/brawler"
@@ -260,7 +250,7 @@
         tools:layout_editor_absoluteY="289dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/Task1txt"
         android:layout_width="112dp"
         android:layout_height="77dp"
         android:ems="10"
