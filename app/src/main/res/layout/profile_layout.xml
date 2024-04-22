@@ -21,70 +21,84 @@
             android:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/ShiftMateLogo"
+            android:src="@drawable/shiftmatelogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/profileSaveBut"
             android:layout_width="178dp"
             android:layout_height="62dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="38dp"
             android:backgroundTint="#1D364A"
             android:fontFamily="@font/brawler"
             android:text="Save"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="217dp"
-            tools:layout_editor_absoluteY="631dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/profileBackBut"
             android:layout_width="178dp"
             android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="38dp"
             android:backgroundTint="#1D364A"
             android:fontFamily="@font/brawler"
-            android:text="Close"
+            android:text="Back"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="631dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/nameEditText"
+        <TextView
+            android:id="@+id/profileTitleTextView"
             android:layout_width="415dp"
             android:layout_height="78dp"
+            android:layout_marginTop="9dp"
             android:background="#1E3848"
             android:backgroundTint="#1E3848"
             android:fontFamily="@font/brawler"
+            android:gravity="center"
             android:hint="Profile"
-
-            android:inputType="text"
             android:minHeight="48dp"
+            android:text="Your Profile"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="34sp"
-            tools:layout_editor_absoluteX="-2dp"
-            tools:layout_editor_absoluteY="153dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileimageView" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/profileSurnameEditText"
             android:layout_width="292dp"
             android:layout_height="45dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="78dp"
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
-            android:hint="Strider"
+            android:hint="Surname"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="343dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/profilePasswordEditText"
             android:layout_width="292dp"
             android:layout_height="45dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="548dp"
+            android:layout_marginEnd="78dp"
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
             android:hint="**************"
@@ -92,13 +106,18 @@
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="571dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/profileEmailEditText"
             android:layout_width="292dp"
             android:layout_height="45dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="480dp"
+            android:layout_marginEnd="78dp"
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
             android:hint="sam@gmail.com"
@@ -106,27 +125,37 @@
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="496dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/profileNameEditText"
             android:layout_width="292dp"
             android:layout_height="45dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="276dp"
+            android:layout_marginEnd="78dp"
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
-            android:hint="Sam"
+            android:hint="First Name"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="264dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/profileRoleEditText"
             android:layout_width="292dp"
             android:layout_height="45dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="412dp"
+            android:layout_marginEnd="78dp"
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
             android:hint="Senior Manager"
@@ -134,15 +163,21 @@
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="418dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/profileimageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="141dp"
-            tools:layout_editor_absoluteY="16dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="142dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/logoImageView"
+            app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
     android:background="#404040">
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/focusExitBut"
         android:layout_width="129dp"
         android:layout_height="85dp"
         android:layout_marginStart="141dp"

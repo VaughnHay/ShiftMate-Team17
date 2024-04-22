@@ -7,7 +7,7 @@
     android:background="#404040">
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/taskSaveBut"
         android:layout_width="159dp"
         android:layout_height="44dp"
         android:layout_marginStart="28dp"
@@ -18,10 +18,10 @@
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/registerButton" />
+        app:layout_constraintStart_toEndOf="@+id/taskBackBut" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/taskBackBut"
         android:layout_width="159dp"
         android:layout_height="44dp"
         android:layout_marginStart="41dp"
@@ -31,11 +31,11 @@
         android:fontFamily="@font/brawler"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/registerButton"
+        app:layout_constraintEnd_toStartOf="@+id/taskSaveBut"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/taskTitleTextView"
         android:layout_width="408dp"
         android:layout_height="81dp"
         android:layout_marginTop="40dp"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/taskTitleEditText"
         android:layout_width="292dp"
         android:layout_height="45dp"
         android:layout_marginStart="41dp"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/taskDeadlineEditText"
         android:layout_width="126dp"
         android:layout_height="48dp"
         android:layout_marginStart="41dp"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/taskReqTimeEditText"
         android:layout_width="293dp"
         android:layout_height="52dp"
         android:layout_marginStart="41dp"
@@ -114,7 +114,8 @@
         android:id="@+id/nameEditText"
         android:layout_width="292dp"
         android:layout_height="85dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="78dp"
         android:backgroundTint="#FEFEFE"
         android:fontFamily="@font/brawler"
         android:hint="Task Description"
@@ -122,8 +123,8 @@
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
-        tools:layout_editor_absoluteX="41dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskTitleEditText" />
 
     <ImageView
         android:id="@+id/logoImageView"

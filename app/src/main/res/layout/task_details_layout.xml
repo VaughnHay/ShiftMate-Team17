@@ -8,114 +8,153 @@
 
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/taskDetBackBut"
         android:layout_width="159dp"
         android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="49dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Back"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="638dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/taskDetFocusBut"
         android:layout_width="194dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="49dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Enter Focus Session"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="634dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/nameEditText"
+    <TextView
+        android:id="@+id/taskDetTitleTextView"
         android:layout_width="410dp"
         android:layout_height="103dp"
+        android:layout_marginTop="21dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
+        android:gravity="center"
         android:hint="Project X Details"
-        android:inputType="text"
         android:minHeight="48dp"
+        android:text="Project X Details"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="137dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <ProgressBar
-        android:id="@+id/progressBar6"
+        android:id="@+id/taskDetprogressBar1"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="83dp"
         android:pointerIcon="arrow"
         android:progress="50"
         android:progressBackgroundTint="#FF9800"
         android:progressTint="#FF9800"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskDetStatusTextView" />
 
-    <EditText
-        android:id="@+id/nameEditText"
+    <TextView
+        android:id="@+id/taskDetTimeSpentTextView"
         android:layout_width="217dp"
         android:layout_height="47dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="1dp"
+        android:background="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:gravity="center"
         android:hint="Time Spent on Task"
-        android:inputType="text"
         android:minHeight="48dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="459dp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/taskDetprogressBar2"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="61dp"
-        android:layout_height="48dp"
-        android:hint="1,5 hrs"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="267dp"
-        tools:layout_editor_absoluteY="458dp" />
-
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="217dp"
+    <TextView
+        android:id="@+id/taskDetTimeTextView"
+        android:layout_width="65dp"
         android:layout_height="47dp"
-        android:hint="Completion Status"
-        android:inputType="text"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="1dp"
+        android:background="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:gravity="center"
+        android:hint="1,5 hrs"
         android:minHeight="48dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="322dp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/taskDetprogressBar2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/taskDetStatusTextView"
+        android:layout_width="279dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="82dp"
+        android:background="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:gravity="center"
+        android:hint="Completion Status"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskDetDescripEditText" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/taskDetDescripEditText"
         android:layout_width="279dp"
         android:layout_height="55dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="82dp"
         android:backgroundTint="#FEFEFE"
         android:hint="Description: "
         android:inputType="text"
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="258dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar6"
+        android:id="@+id/taskDetprogressBar2"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="22dp"
         android:pointerIcon="arrow"
         android:progress="22"
         android:progressBackgroundTint="#D50000"
         android:progressTint="#D50000"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="506dp" />
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -125,7 +164,7 @@
         android:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/ShiftMateLogo"
+        android:src="@drawable/shiftmatelogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,6 +191,8 @@
         android:id="@+id/checkBox"
         android:layout_width="221dp"
         android:layout_height="44dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="116dp"
         android:backgroundTint="#FEFEFE"
         android:buttonTint="#FEFEFE"
         android:checked="false"
@@ -159,7 +200,7 @@
         android:text="Task Completed"
         android:textColor="@color/white"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="570dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
