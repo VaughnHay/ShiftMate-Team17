@@ -12,17 +12,60 @@
 
     <!-- com.example.shiftmateOPSC.Task list -->
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="278dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="67dp"
+        android:backgroundTint="@color/material_dynamic_neutral50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTaskButton" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="112dp"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:fontFamily="@font/brawler"
+        android:inputType="text"
+        android:text="Project X"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="89dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/brawler"
+        android:text="12/03/2024
+
+8hrs"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="443dp" />
+
     <ProgressBar
         android:id="@+id/progressBar6"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="67dp"
+        android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
         android:pointerIcon="arrow"
         android:progress="50"
         android:progressBackgroundTint="#FF9800"
         android:progressTint="#FF9800"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="357dp" />
 
     <Button
         android:id="@+id/button"
@@ -80,60 +123,19 @@
         tools:layout_editor_absoluteX="66dp"
         tools:layout_editor_absoluteY="663dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="278dp"
-        android:layout_height="92dp"
-        android:backgroundTint="@color/material_dynamic_neutral50"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="417dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/brawler"
-        android:text="09/05/2024"
-        android:textColor="@color/white"
-        android:textSize="14dp"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="435dp" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="112dp"
-        android:layout_height="77dp"
-        android:ems="10"
-        android:fontFamily="@font/brawler"
-        android:inputType="text"
-        android:text="Project Y"
-        android:textColor="@color/white"
-        android:textSize="24dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="423dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="44dp"
-        android:layout_height="25dp"
-        android:fontFamily="@font/brawler"
-        android:padding="@android:dimen/dialog_min_width_major"
-        android:text="2 hrs"
-        android:textColor="@color/white"
-        android:textSize="14dp"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="470dp" />
-
     <ProgressBar
         android:id="@+id/progressBar6"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="67dp"
         android:pointerIcon="arrow"
         android:progress="82"
         android:progressBackgroundTint="#4CAF50"
         android:progressTint="#8BC34A"
-        tools:layout_editor_absoluteX="66dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="510dp" />
 
     <ImageView
@@ -143,7 +145,7 @@
         android:layout_constraintStart_toStartOf="parent"
         android:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="24dp"
-        android:src="@drawable/ShiftMateLogo"
+        android:src="@drawable/shiftmatelogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -195,68 +197,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_constraintTop_toBottomOf="@id/taskRecyclerView"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="31dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/add_new_task"
         android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintEnd_toStartOf="@+id/focusButton"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <Button
         android:id="@+id/focusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_constraintTop_toBottomOf="@id/taskRecyclerView"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/focus"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toTopOf="@+id/welcomeTextView"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/welcomeTextView" />
 
     <Button
         android:id="@+id/focusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_constraintTop_toBottomOf="@id/taskRecyclerView"
+        android:layout_marginTop="31dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Clock-in"
         android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="307dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="278dp"
         android:layout_height="92dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="67dp"
         android:backgroundTint="@color/material_dynamic_neutral50"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTaskButton" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="89dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/brawler"
-        android:text="12/03/2024"
-        android:textColor="@color/white"
-        android:textSize="14dp"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="282dp" />
+        android:text="12/03/2024
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="44dp"
-        android:layout_height="25dp"
-        android:fontFamily="@font/brawler"
-        android:padding="@android:dimen/dialog_min_width_major"
-        android:text="8hrs"
+8hrs"
         android:textColor="@color/white"
         android:textSize="14dp"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="317dp" />
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="289dp" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -269,16 +270,18 @@
         android:textColor="@color/white"
         android:textSize="24dp"
         tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="270dp" />
+        tools:layout_editor_absoluteY="264dp" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="65dp"
         android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:rotation="0"
         android:rotationY="180"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size"
-        tools:layout_editor_absoluteX="330dp"
-        tools:layout_editor_absoluteY="24dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

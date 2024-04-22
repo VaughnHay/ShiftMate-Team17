@@ -10,16 +10,22 @@
         android:id="@+id/registerButton"
         android:layout_width="159dp"
         android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="49dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="Back"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="638dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="410dp"
         android:layout_height="103dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
@@ -30,7 +36,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="-1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="128dp" />
 
     <TextView
@@ -58,7 +65,7 @@
         android:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/ShiftMateLogo"
+        android:src="@drawable/shiftmatelogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,72 +73,105 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="377dp"
-        android:layout_height="51dp"
+        android:layout_width="360dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
         android:background="@color/white"
         android:fontFamily="@font/brawler"
         android:text="Type Message..."
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="562dp" />
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="59dp"
         android:layout_height="50dp"
-        app:srcCompat="@android:drawable/ic_menu_send"
-        tools:layout_editor_absoluteX="334dp"
-        tools:layout_editor_absoluteY="563dp" />
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:srcCompat="@android:drawable/ic_menu_send" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="273dp"
-        android:layout_height="70dp"
-        android:background="@drawable/rounded_edittext"
-        android:paddingLeft="6dp"
-        android:backgroundTint="#E0F2F1"
-        android:fontFamily="@font/brawler"
-        android:text="Sam: Hi team, I hope you are all well. Remember our meeting time is for 14:00 today."
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="240dp" />
+    <ScrollView
+        android:layout_width="295dp"
+        android:layout_height="279dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="272dp"
-        android:layout_height="99dp"
-        android:background="@drawable/rounded_edittext"
-        android:backgroundTint="#E0F2F1"
-        android:fontFamily="@font/brawler"
-        android:paddingLeft="6dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="3dp"
-        android:text="Sandile: Sorry team, but I am unavailable for the meeting today. Jacob has all the information I needed to share."
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="310dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="274dp"
-        android:layout_height="53dp"
-        android:background="@drawable/rounded_edittext"
-        android:backgroundTint="#E0F2F1"
-        android:fontFamily="@font/brawler"
-        android:paddingLeft="6dp"
-        android:paddingTop="4dp"
-        android:text="Jacob: Enjoy the holiday Sandile! See you next week."
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="407dp" />
+        <LinearLayout
+            android:layout_width="292dp"
+            android:layout_height="279dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="273dp"
-        android:layout_height="70dp"
-        android:background="@drawable/rounded_edittext"
-        android:backgroundTint="#E0F2F1"
-        android:fontFamily="@font/brawler"
-        android:paddingLeft="6dp"
-        android:paddingTop="4dp"
-        android:text="You: Hebana, already on holiday?? We just back 2 weeks ago."
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="460dp" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="273dp"
+                android:layout_height="70dp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="#E0F2F1"
+                android:fontFamily="@font/brawler"
+                android:paddingLeft="6dp"
+                android:text="Sam: Hi team, I hope you are all well. Remember our meeting time is for 14:00 today."
+                tools:layout_editor_absoluteX="69dp"
+                tools:layout_editor_absoluteY="240dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="271dp"
+                android:layout_height="87dp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="#E0F2F1"
+                android:fontFamily="@font/brawler"
+                android:paddingLeft="6dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="3dp"
+                android:text="Sandile: Sorry team, but I am unavailable for the meeting today. Jacob has all the information I needed to share."
+                tools:layout_editor_absoluteX="69dp"
+                tools:layout_editor_absoluteY="310dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="274dp"
+                android:layout_height="53dp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="#E0F2F1"
+                android:fontFamily="@font/brawler"
+                android:paddingLeft="6dp"
+                android:paddingTop="4dp"
+                android:text="Jacob: Enjoy the holiday Sandile! See you next week."
+                tools:layout_editor_absoluteX="69dp"
+                tools:layout_editor_absoluteY="407dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="273dp"
+                android:layout_height="70dp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="#E0F2F1"
+                android:fontFamily="@font/brawler"
+                android:paddingLeft="6dp"
+                android:paddingTop="4dp"
+                android:text="You: Hebana, already on holiday?? We just back 2 weeks ago."
+                tools:layout_editor_absoluteX="69dp"
+                tools:layout_editor_absoluteY="460dp" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
