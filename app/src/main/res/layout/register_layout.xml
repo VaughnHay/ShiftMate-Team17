@@ -109,7 +109,7 @@
         android:layout_constraintTop_toBottomOf="@id/logoImageView"
         android:layout_constraintEnd_toEndOf="parent"
         android:layout_constraintStart_toStartOf="parent"
-        android:autofillHints=""
+        android:autofillHints="Email"
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
         android:hint="@string/email"
