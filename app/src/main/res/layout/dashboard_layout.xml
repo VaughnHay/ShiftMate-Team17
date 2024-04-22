@@ -32,7 +32,7 @@
         android:ems="10"
         android:fontFamily="@font/brawler"
         android:inputType="text"
-        android:text="Project X"
+        android:text="Task 2"
         android:textColor="@color/white"
         android:textSize="24dp"
         tools:layout_editor_absoluteX="76dp"
@@ -52,7 +52,7 @@
         tools:layout_editor_absoluteY="443dp" />
 
     <ProgressBar
-        android:id="@+id/progressBar6"
+        android:id="@+id/Task1progressBar6"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
@@ -95,14 +95,14 @@
         android:ems="10"
         android:fontFamily="@font/brawler"
         android:inputType="text"
-        android:text="Project Z"
+        android:text="Task 3"
         android:textColor="@color/white"
         android:textSize="24dp"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="576dp" />
 
     <ProgressBar
-        android:id="@+id/progressBar6"
+        android:id="@+id/Task3progressBar6"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
@@ -114,7 +114,7 @@
         tools:layout_editor_absoluteY="663dp" />
 
     <ProgressBar
-        android:id="@+id/progressBar6"
+        android:id="@+id/Task2progressBar6"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="278dp"
         android:layout_height="42dp"
@@ -256,7 +256,7 @@
         android:ems="10"
         android:fontFamily="@font/brawler"
         android:inputType="text"
-        android:text="Project X"
+        android:text="Task 1"
         android:textColor="@color/white"
         android:textSize="24dp"
         tools:layout_editor_absoluteX="90dp"
