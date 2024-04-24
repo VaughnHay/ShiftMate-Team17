@@ -1,13 +1,20 @@
 package com.example.shiftmateOPSC
 
-import java.util.Date
-
 class Task {
 
-    data class Task(
-        val name: String,
-        val deadline: Date,
-        val duration: String,
-        val isCompleted: Boolean
-    )
+    val name: CharSequence?
+        get() {
+            TODO()
+        }
+
+    val duration: CharSequence?
+        get(){
+            TODO()
+        }
+
+
+    data class Task(val name: String,
+                    val duration: String,
+                    val isComplete: Boolean)
+
 }

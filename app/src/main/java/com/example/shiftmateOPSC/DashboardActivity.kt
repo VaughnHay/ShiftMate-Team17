@@ -1,5 +1,4 @@
 package com.example.shiftmateOPSC
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,21 +13,23 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_layout)
 
-        // Assuming you have tasks initialized somewhere
-        //tasks = Initialize your tasks here
+        // Initialize tasks (replace with actual task data)
+        tasks = getTasks()
+
+        // Initialize RecyclerView
         recyclerView = findViewById(R.id.taskRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        recyclerView = findViewById(R.id.taskRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        // Initialize TaskAdapter and set it to RecyclerView
         taskAdapter = TaskAdapter(tasks)
         recyclerView.adapter = taskAdapter
     }
+
     private fun getTasks(): List<Task> {
-        // Dummy tasks for demonstration
+        // Dummy tasks for demonstration (replace with actual task data retrieval)
         return listOf(
-            Task("Task1", "2 hours", false),
-            Task("Task 2", "1 hour", true)
+            Task()
+
         )
     }
 }
