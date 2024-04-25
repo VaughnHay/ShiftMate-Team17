@@ -6,34 +6,6 @@
     android:layout_height="match_parent"
     android:background="#404040">
 
-    <Button
-        android:id="@+id/taskSaveBut"
-        android:layout_width="159dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#1D364A"
-        android:fontFamily="@font/brawler"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/taskBackBut"
-        android:layout_width="159dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#1D364A"
-        android:fontFamily="@font/brawler"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/taskTitleTextView"
         android:layout_width="408dp"
@@ -42,8 +14,9 @@
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
 
+        android:editable="false"
         android:fontFamily="@font/brawler"
-        android:hint="Add Task"
+        android:hint="@string/add_task"
         android:inputType="text"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -52,78 +25,6 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/taskTitleEditText"
-        android:layout_width="292dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="78dp"
-        android:backgroundTint="#FEFEFE"
-        android:fontFamily="@font/brawler"
-        android:hint="Task Title"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/taskDeadlineEditText"
-        android:layout_width="126dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="424dp"
-        android:backgroundTint="#FEFEFE"
-        android:fontFamily="@font/brawler"
-        android:hint="Task Deadline"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/taskReqTimeEditText"
-        android:layout_width="131dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="508dp"
-        android:layout_marginEnd="77dp"
-        android:backgroundTint="#FEFEFE"
-        android:fontFamily="@font/brawler"
-        android:hint="Required Time"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="292dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="288dp"
-        android:backgroundTint="#FEFEFE"
-        android:fontFamily="@font/brawler"
-        android:hint="Task Description"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -144,27 +45,141 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:background="@android:color/primary_text_dark_nodisable"
+        android:editable="false"
         android:fontFamily="@font/brawler"
         android:text="ShiftMate"
         android:textColor="@android:color/white"
-        android:textSize="28dp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="212dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="16dp"
-        android:background="#F9F9F9"
-        android:dateTextAppearance="@style/TextAppearance.AppCompat.Medium"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskTitleTextView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:id="@+id/CategoryACTV"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/category"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/DescriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/StartTimeTV"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/start_time"
+                android:inputType="time"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/EndTimeTV"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/end_time"
+                android:inputType="time"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/ExplanationTV"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:editable="false"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:text="@string/date_of_entry"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textIsSelectable="false" />
+
+            <CalendarView
+                android:id="@+id/calendarView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white" />
+
+            <Button
+                android:id="@+id/btnTakePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:height="50dp"
+                android:text="@string/take_picture" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    android:text="@string/back" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    android:text="@string/save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
