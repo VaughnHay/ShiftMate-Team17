@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#404040">
+    android:background="#404040"
+    tools:context=".Register">
 
 
     <TextView
@@ -123,7 +124,6 @@
         android:fontFamily="@font/brawler"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:text="Email"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

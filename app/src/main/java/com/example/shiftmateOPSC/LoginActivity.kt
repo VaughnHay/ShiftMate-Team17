@@ -3,6 +3,7 @@ package com.example.shiftmateOPSC
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -12,8 +13,8 @@ class LoginActivity: AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
-    private lateinit var registerButton: Button
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var regBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,18 +24,18 @@ class LoginActivity: AppCompatActivity() {
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
-        registerButton = findViewById(R.id.registerButton)
+        regBtn = findViewById(R.id.btnRegister)
 
         loginButton.setOnClickListener {
             loginUser()
         }
 
         // Set click listener for register text view
-        registerButton.setOnClickListener {
-            // Navigate to the registration activity
-            val intent = Intent(this@LoginActivity, Register::class.java)
+        regBtn.setOnClickListener{
+            val intent =Intent(this@LoginActivity, Register::class.java)
             startActivity(intent)
         }
+
     }
     private fun loginUser() {
         val userEmail = emailEditText.text.toString()

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#404040">
+    android:background="#404040"
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -73,16 +74,7 @@
         app:layout_constraintTop_toTopOf="@+id/logoImageView"
         app:layout_constraintVertical_bias="0.868" />
 
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="267dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="656dp"
-        android:text="@string/don_t_have_an_account_register"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -94,6 +86,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="159dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#F21D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
