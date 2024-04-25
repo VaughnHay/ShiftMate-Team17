@@ -8,34 +8,34 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="146dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/addTaskButton"
         app:layout_constraintBottom_toTopOf="@id/focusButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/addTaskButton" />
+
 
     <Button
         android:id="@+id/Task2btn"
         android:layout_width="278dp"
         android:layout_height="92dp"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="412dp"
         android:layout_marginEnd="67dp"
         android:backgroundTint="@color/material_dynamic_neutral50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTaskButton" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Task2txt"
         android:layout_width="103dp"
         android:layout_height="63dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="424dp"
         android:fontFamily="@font/brawler"
         android:gravity="center"
         android:text="@string/task_2"
@@ -81,43 +81,44 @@
         android:layout_width="278dp"
         android:layout_height="92dp"
         android:layout_marginStart="66dp"
+        android:layout_marginTop="572dp"
         android:layout_marginEnd="67dp"
-        android:layout_marginBottom="68dp"
         android:backgroundTint="@color/material_dynamic_neutral50"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/Task3Date_Timetxt"
         android:layout_width="89dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="92dp"
         android:fontFamily="@font/brawler"
         android:text="@string/date_time3"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865" />
 
     <TextView
         android:id="@+id/Task3txt"
         android:layout_width="110dp"
         android:layout_height="65dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="584dp"
         android:fontFamily="@font/brawler"
         android:gravity="center"
         android:text="@string/task_3"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/Task3progressBar"
@@ -125,13 +126,17 @@
         android:layout_width="278dp"
         android:layout_height="42dp"
         android:layout_marginStart="64dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="69dp"
         android:pointerIcon="arrow"
         android:progress="8"
         android:progressBackgroundTint="#FF5722"
         android:progressTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
 
     <ProgressBar
         android:id="@+id/Task2progressBar"
@@ -139,37 +144,34 @@
         android:layout_width="278dp"
         android:layout_height="42dp"
         android:layout_marginStart="66dp"
+        android:layout_marginTop="504dp"
         android:layout_marginEnd="67dp"
-        android:layout_marginBottom="184dp"
         android:pointerIcon="arrow"
         android:progress="82"
         android:progressBackgroundTint="#4CAF50"
         android:progressTint="#8BC34A"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="24dp"
         android:contentDescription="@string/app_logo"
         android:src="@drawable/shiftmatelogo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
 
     <TextView
         android:id="@+id/dashboardWelcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_constraintStart_toEndOf="@id/logoImageView"
-        android:layout_constraintTop_toTopOf="@id/logoImageView"
         android:layout_marginTop="56dp"
         android:text="@string/shiftmate_title"
         android:fontFamily="@font/brawler"
@@ -185,8 +187,6 @@
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_constraintStart_toEndOf="@id/logoImageView"
-        android:layout_constraintTop_toTopOf="@id/logoImageView"
         android:layout_marginTop="124dp"
         android:text="@string/welcome_back_sam"
         android:fontFamily="@font/brawler"
@@ -203,15 +203,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginTop="180dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/add_new_task"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toStartOf="@+id/clockInBut"
-        app:layout_constraintStart_toEndOf="@+id/focusButton"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/focusButton"
@@ -244,13 +244,13 @@
         android:layout_width="278dp"
         android:layout_height="92dp"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="264dp"
         android:layout_marginEnd="67dp"
         android:backgroundTint="@color/material_dynamic_neutral50"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTaskButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Task1Date_Timetxt"
