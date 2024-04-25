@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845972277387",
+    "project_id": "shiftmate-team17",
+    "storage_bucket": "shiftmate-team17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845972277387:android:520c356b80ee16c2d86c8e",
+        "android_client_info": {
+          "package_name": "com.example.shiftmateOPSC"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrTyTiy8BOuaa3UewUgsSKJtUPf4MAnxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
