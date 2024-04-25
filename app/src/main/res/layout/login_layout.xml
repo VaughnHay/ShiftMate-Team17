@@ -10,10 +10,6 @@
         android:id="@+id/logoImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_constraintBottom_toTopOf="@id/emailEditText"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toTopOf="parent"
         android:background="#991F394A"
         android:contentDescription="TODO"
         android:src="@drawable/shiftmatelogo"
@@ -28,31 +24,27 @@
         android:id="@+id/emailEditText"
         android:layout_width="180dp"
         android:layout_height="55dp"
-        android:layout_constraintTop_toBottomOf="@id/logoImageView"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="116dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:paddingLeft="6dp"
+        android:paddingStart="6dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:layout_editor_absoluteX="115dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/logoImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.427"
+        tools:ignore="RtlSymmetry" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="181dp"
         android:layout_height="57dp"
-        android:layout_constraintTop_toBottomOf="@id/emailEditText"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
         android:hint="Password"
@@ -62,46 +54,45 @@
         android:textColorHint="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
-        tools:layout_editor_absoluteX="115dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="295dp"
         android:layout_height="62dp"
-        android:layout_constraintTop_toBottomOf="@id/passwordEditText"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="#F21D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
-        app:layout_constraintVertical_bias="0.679" />
+        app:layout_constraintTop_toTopOf="@+id/logoImageView"
+        app:layout_constraintVertical_bias="0.868" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="267dp"
         android:layout_height="48dp"
+        android:layout_marginTop="656dp"
         android:text="@string/don_t_have_an_account_register"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/logoImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="142dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
