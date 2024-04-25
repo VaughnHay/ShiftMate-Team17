@@ -1,5 +1,4 @@
 package com.example.shiftmateOPSC
-
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -24,6 +23,7 @@ class AddTask : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var calendarView: CalendarView
     private lateinit var dateSelected: String
+    private var imageBitmap: Bitmap? = null
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private val CAMERA_REQUEST_CODE = 101
@@ -51,15 +51,22 @@ class AddTask : AppCompatActivity() {
             val category = categoryAutoCompleteTextView.text.toString()
             val date = dateSelected
 
-            // Check if any of the fields are empty
+            // Check if any of the mandatory fields are empty
             if (startTime.isEmpty() || endTime.isEmpty() || description.isEmpty() || category.isEmpty() || date.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill in all mandatory fields", Toast.LENGTH_SHORT).show()
             } else {
-                // All fields are filled, temporarily displaying in toast message
+                // All mandatory fields are filled
                 val message =
-                    "Start Time: $startTime\nEnd Time: $endTime\nDescription: $description\nCategory: $category\nDate: $date"
-                //Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-                showFullMessageDialog(message)
+                    "Start Time: $startTime\nEnd Time: $endTime\nDescription: $description\nCategory: $category\nDate: $date\n"
+
+                // If imageBitmap is not null, include image details in the message
+                val fullMessage = if (imageBitmap != null) {
+                    "$message Image included: Yes"
+                } else {
+                    "$message Image included: No"
+                }
+
+                showFullMessageDialog(fullMessage)
             }
         }
 
@@ -93,7 +100,7 @@ class AddTask : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
             val extras = data?.extras
-            val imageBitmap = extras?.get("data") as Bitmap
+            imageBitmap = extras?.get("data") as Bitmap
             imageView.setImageBitmap(imageBitmap)
             imageView.visibility = View.VISIBLE
         }
@@ -118,4 +125,3 @@ class AddTask : AppCompatActivity() {
         dialog.show()
     }
 }
-
