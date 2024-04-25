@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10dp"
-                android:height="50dp"
+                android:height="51dp"
                 android:text="@string/take_picture" />
 
             <ImageView
