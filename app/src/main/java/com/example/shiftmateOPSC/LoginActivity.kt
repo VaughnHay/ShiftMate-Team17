@@ -1,13 +1,15 @@
 package com.example.shiftmateOPSC
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+
 class LoginActivity: AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
@@ -43,9 +45,9 @@ class LoginActivity: AppCompatActivity() {
 
         if (userEmail.isNotEmpty() && userPassword.isNotEmpty()) {
             mAuth.signInWithEmailAndPassword(userEmail, userPassword)
-                .addOnCompleteListener(this) { task ->
+                .addOnCompleteListener(this) { task: Task<AuthResult> ->
                     if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
+                        /* Sign in success, update UI with the signed-in user's information */
                         val user = mAuth.currentUser
                         Toast.makeText(
                             this, "Login successful.",
