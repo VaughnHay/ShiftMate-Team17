@@ -2,7 +2,6 @@ package com.example.shiftmateOPSC
 
 import android.content.Intent
 import android.os.Bundle
-<<<<<<< HEAD
 import android.text.method.PasswordTransformationMethod
 import android.widget.Button
 import android.widget.EditText
@@ -11,17 +10,6 @@ import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-
-=======
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseAuth
-
->>>>>>> 0b519dbd81f034ad73af584ea8374ba37e13f1be
 class LoginActivity: AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
@@ -40,7 +28,7 @@ class LoginActivity: AppCompatActivity() {
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
         regBtn = findViewById(R.id.btnRegister)
-        //viewPasswordBtn = findViewById(R.id.tglPasswordButton)
+        viewPasswordBtn =findViewById(R.id.tglPasswordBtn)
 
         loginButton.setOnClickListener {
             loginUser()
@@ -69,7 +57,7 @@ class LoginActivity: AppCompatActivity() {
 
         if (userEmail.isNotEmpty() && userPassword.isNotEmpty()) {
             mAuth.signInWithEmailAndPassword(userEmail, userPassword)
-                .addOnCompleteListener(this) { task: Task<AuthResult> ->
+                .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         /* Sign in success, update UI with the signed-in user's information */
                         val user = mAuth.currentUser

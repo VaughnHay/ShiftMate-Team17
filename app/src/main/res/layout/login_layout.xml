@@ -23,11 +23,12 @@
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="180dp"
-        android:layout_height="55dp"
+        android:layout_width="286dp"
+        android:layout_height="71dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
+        android:textAlignment="center"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingStart="6dp"
@@ -44,14 +45,15 @@
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="181dp"
-        android:layout_height="57dp"
+        android:layout_width="286dp"
+        android:layout_height="71dp"
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="6dp"
-        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -59,46 +61,70 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.584" />
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="295dp"
-        android:layout_height="62dp"
+        android:layout_width="225dp"
+        android:layout_height="57dp"
         android:backgroundTint="#F21D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/login"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/logoImageView"
         app:layout_constraintVertical_bias="0.868" />
 
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="410dp"
+        android:layout_height="103dp"
+        android:layout_marginEnd="1dp"
+        android:background="#1E3848"
+        android:backgroundTint="#1E3848"
+        android:fontFamily="@font/brawler"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="Welcome to ShiftMate, Please Login Below"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/logoImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/logoImageView"
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="159dp"
-        android:layout_height="54dp"
+        android:layout_width="318dp"
+        android:layout_height="66dp"
         android:backgroundTint="#F21D364A"
         android:fontFamily="@font/brawler"
-        android:text="Register"
+        android:text="Dont Have An Account?"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <ToggleButton
+        android:id="@+id/tglPasswordBtn"
+        android:layout_width="51dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_edittext"
+        android:text="ToggleButton"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

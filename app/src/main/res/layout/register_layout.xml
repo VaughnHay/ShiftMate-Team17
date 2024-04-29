@@ -7,52 +7,49 @@
     android:background="#404040"
     tools:context=".Register">
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#991F394A"
+        android:contentDescription="TODO"
+        android:src="@drawable/shiftmatelogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/nameTextView"
-        android:layout_width="410dp"
-        android:layout_height="103dp"
+        android:layout_width="406dp"
+        android:layout_height="147dp"
         android:layout_marginStart="2dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
         android:gravity="center"
-        android:hint="@string/register"
         android:minHeight="48dp"
-        android:text="@string/register_title"
+        android:text="Register Page, Please Fill in your Details Below"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
-
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="402dp"
-        android:layout_height="366dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="12dp"
-        android:contentDescription="@string/app_logo"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457"
-        app:srcCompat="@drawable/shiftmatelogo" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/regBackBut"
-        android:layout_width="167dp"
-        android:layout_height="52dp"
+        android:layout_width="178dp"
+        android:layout_height="63dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/back_regLayout"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.016"
@@ -62,11 +59,12 @@
 
     <Button
         android:id="@+id/regRegisterBut"
-        android:layout_width="201dp"
-        android:layout_height="52dp"
+        android:layout_width="203dp"
+        android:layout_height="63dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
         android:text="@string/register_regLayout"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -76,8 +74,8 @@
 
     <EditText
         android:id="@+id/regSurnameEditText"
-        android:layout_width="144dp"
-        android:layout_height="56dp"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
@@ -90,14 +88,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.428" />
 
     <EditText
         android:id="@+id/regNameEditText"
-        android:layout_width="144dp"
-        android:layout_height="56dp"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
@@ -117,8 +116,8 @@
 
     <EditText
         android:id="@+id/regEmailEditText"
-        android:layout_width="144dp"
-        android:layout_height="56dp"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
         android:autofillHints=""
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
@@ -131,15 +130,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534" />
+        app:layout_constraintVertical_bias="0.541" />
 
     <EditText
         android:id="@+id/regPasswordEditText"
-        android:layout_width="144dp"
-        android:layout_height="56dp"
-        android:autofillHints=""
+        android:layout_width="246dp"
+        android:layout_height="62dp"
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/brawler"
         android:hint="@string/password_regLayout"
@@ -151,9 +150,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.659" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
