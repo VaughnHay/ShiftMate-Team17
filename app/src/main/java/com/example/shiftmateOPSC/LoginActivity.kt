@@ -1,13 +1,16 @@
 package com.example.shiftmateOPSC
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.text.method.PasswordTransformationMethod
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import android.widget.ToggleButton
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+
+
 class LoginActivity: AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
@@ -15,6 +18,7 @@ class LoginActivity: AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var regBtn: Button
+    private lateinit var viewPasswordBtn: ToggleButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,7 @@ class LoginActivity: AppCompatActivity() {
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
         regBtn = findViewById(R.id.btnRegister)
+        viewPasswordBtn = findViewById(R.id.tglPasswordButton)
 
         loginButton.setOnClickListener {
             loginUser()
@@ -34,6 +39,16 @@ class LoginActivity: AppCompatActivity() {
         regBtn.setOnClickListener{
             val intent =Intent(this@LoginActivity, Register::class.java)
             startActivity(intent)
+        }
+
+        viewPasswordBtn.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                // Show password
+                passwordEditText.transformationMethod = null
+            } else {
+                // Hide password
+                passwordEditText.transformationMethod = PasswordTransformationMethod()
+            }
         }
 
     }
