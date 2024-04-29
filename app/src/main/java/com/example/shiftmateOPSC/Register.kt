@@ -16,6 +16,7 @@ class Register : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var registerButton: Button
+    private lateinit var bckButton: Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var usersRef: DatabaseReference
 
@@ -31,9 +32,14 @@ class Register : AppCompatActivity() {
         emailEditText = findViewById(R.id.regEmailEditText)
         passwordEditText = findViewById(R.id.regPasswordEditText)
         registerButton = findViewById(R.id.regRegisterBut)
+        bckButton = findViewById(R.id.regBackBut)
 
         registerButton.setOnClickListener {
             registerUser()
+        }
+        bckButton.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 
