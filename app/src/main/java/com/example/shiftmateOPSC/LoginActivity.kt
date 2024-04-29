@@ -29,7 +29,7 @@ class LoginActivity: AppCompatActivity() {
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
         regBtn = findViewById(R.id.btnRegister)
-        viewPasswordBtn = findViewById(R.id.tglPasswordButton)
+        //viewPasswordBtn = findViewById(R.id.tglPasswordButton)
 
         loginButton.setOnClickListener {
             loginUser()
