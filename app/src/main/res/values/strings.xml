@@ -43,4 +43,20 @@
     <string name="date_time1">12/03/2024 8hrs</string>
     <string name="task_1">Task 1</string>
     <string name="menu">Menu</string>
+    <string name="add_task">Add Task</string>
+    <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="date_of_entry">Date of Entry:</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="save">Save</string>
+    <string name="message_1">Sam: Hi team, I hope you are all well. Remember our meeting time is for 14:00 today.</string>
+    <string name="message_2">Sandile: Sorry team, but I am unavailable for the meeting today. Jacob has all the information I needed to share.</string>
+    <string name="message_3">Jacob: Enjoy the holiday Sandile! See you next week.</string>
+    <string name="message_4">You: Hebana, already on holiday?? We just back 2 weeks ago.</string>
+    <string name="Todo">TODO</string>
+    <string name="Chat_Title">Chat Room</string>
+    <string name="back_chatLay">Back</string>
+    <string name="type_message">Type Message...</string>
 </resources>
