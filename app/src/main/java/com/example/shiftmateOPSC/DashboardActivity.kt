@@ -12,7 +12,10 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var taskAdapter: TaskAdapter
     private lateinit var tasks: List<Task>
     private lateinit var focusButton: Button
-
+    private lateinit var addTaskButton:Button
+    private lateinit var clockInButton:Button
+    private lateinit var myGoalsButton: Button
+    private lateinit var viewTotHrsButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_layout)
@@ -28,26 +31,36 @@ class DashboardActivity : AppCompatActivity() {
         taskAdapter = TaskAdapter(tasks)
         recyclerView.adapter = taskAdapter
 
+        myGoalsButton = findViewById(R.id.myGoalsButton)
+        viewTotHrsButton = findViewById(R.id.viewTotHrsButton)
         focusButton = findViewById(R.id.focusButton)
+        addTaskButton = findViewById(R.id.addTaskButton)
+        clockInButton = findViewById(R.id.clockInBut)
 
-        //Setting the onCLickListener
-        focusButton.setOnClickListener{
+
+        // Set click listeners
+        myGoalsButton.setOnClickListener{
+            val intent =Intent(this@DashboardActivity, MinMaxGoalAct::class.java)
+            startActivity(intent)
+        }
+
+        /*totalHoursButton.setOnClickListener{
+            val intent = Intent(this@DashboardActivity, TotalHoursActivity::class.java)
+            startActivity(intent)
+        }*/
+        focusButton.setOnClickListener {
             val intent = Intent(this@DashboardActivity, FocusActivity::class.java)
             startActivity(intent)
+        }
 
-            val addTaskButton: Button = findViewById(R.id.addTaskButton)
-            addTaskButton.setOnClickListener{
-                val intent = Intent(this, AddTask::class.java)
-                startActivity(intent)
-            }
+        addTaskButton.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, AddTask::class.java)
+            startActivity(intent)
+        }
 
-            val clockInButton: Button = findViewById(R.id.clockInBut)
-
-            clockInButton.setOnClickListener{
-                //starts the ClockInActivity
-                val intent = Intent(this,ClockInActivity::class.java)
-                startActivity(intent)
-            }
+        clockInButton.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, ClockInActivity::class.java)
+            startActivity(intent)
         }
     }
 

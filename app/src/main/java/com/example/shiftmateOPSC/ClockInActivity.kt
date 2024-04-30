@@ -1,4 +1,5 @@
 package com.example.shiftmateOPSC
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CalendarView
@@ -6,13 +7,15 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.android.gms.maps.MapView
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-class ClockInActivity : AppCompatActivity(){
+class ClockInActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
+    private lateinit var mapView: MapView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +34,7 @@ class ClockInActivity : AppCompatActivity(){
         val clockInEmpCodeEditText: EditText = findViewById(R.id.clockInEmpCodeEditText)
 
         //Listener for the calendarview to update the date field
-        calendarView.setOnDateChangeListener{ _,year, month, dayOfMonth ->
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val selectedDate = Calendar.getInstance()
             selectedDate.set(year, month, dayOfMonth)
             val sdf = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
@@ -46,7 +49,7 @@ class ClockInActivity : AppCompatActivity(){
         clockInTimeEditText.setText(formattedTime)
 
         //Verify button
-        verifyBut.setOnClickListener{
+        verifyBut.setOnClickListener {
             //Implement logic here
             // checks if employee code provided exists and is assigned to the logged-in user
         }
@@ -66,20 +69,41 @@ class ClockInActivity : AppCompatActivity(){
             finish()
         }
 
-        clockInBut.setOnClickListener {
-            //navigates back to the dashboard page
+        // Set onClick listener for the back button
+        clockInBackBut.setOnClickListener {
+            // Navigate back to the previous activity (DashboardActivity)
             finish()
         }
     }
 
-    private fun saveClockInData(date: String, time: String, location: String, empCode: String){
+    private fun saveClockInData(date: String, time: String, location: String, empCode: String) {
         //saves data to database
-        val clockInData = ClockInData(date, time, location,empCode)
+        val clockInData = ClockInData(date, time, location, empCode)
         val clockInId = database.child("clock_ins").push().key
-        if(clockInId != null){
+        if (clockInId != null) {
             database.child("clock_ins").child(clockInId).setValue(clockInData)
         }
     }
+
     data class ClockInData(val date: String, val time: String, val location: String, val empCode: String)
 
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+    }
 }
