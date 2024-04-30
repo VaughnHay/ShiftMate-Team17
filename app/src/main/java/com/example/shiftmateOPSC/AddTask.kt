@@ -7,7 +7,12 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.*
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.CalendarView
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -15,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 class AddTask : AppCompatActivity() {
 
@@ -34,6 +38,7 @@ class AddTask : AppCompatActivity() {
     private lateinit var calendarView: CalendarView
     private lateinit var dateSelected: String
     private var imageBitmap: Bitmap? = null
+    private lateinit var backButton: Button
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private val CAMERA_REQUEST_CODE = 101
@@ -56,6 +61,7 @@ class AddTask : AppCompatActivity() {
         takePictureButton = findViewById(R.id.btnTakePic)
         imageView = findViewById(R.id.image_view)
         calendarView = findViewById(R.id.calendarView3)
+        backButton = findViewById(R.id.btnBack)
 
         // Set onClickListener for the save button
         saveButton.setOnClickListener {
@@ -82,6 +88,10 @@ class AddTask : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+
+        backButton.setOnClickListener{
+            finish()
         }
 
         // Set onClickListener for the take picture button
