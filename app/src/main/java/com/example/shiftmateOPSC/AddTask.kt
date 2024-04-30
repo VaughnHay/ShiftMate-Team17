@@ -77,6 +77,10 @@ class AddTask : AppCompatActivity() {
                 } else {
                     saveTaskToFirebaseDatabase(null, startTime, endTime, description, category, date)
                 }
+                Toast.makeText(
+                    this, "Task Saved.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
