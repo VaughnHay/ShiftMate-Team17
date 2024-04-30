@@ -40,6 +40,14 @@ class DashboardActivity : AppCompatActivity() {
                 val intent = Intent(this, AddTask::class.java)
                 startActivity(intent)
             }
+
+            val clockInButton: Button = findViewById(R.id.clockInBut)
+
+            clockInButton.setOnClickListener{
+                //starts the ClockInActivity
+                val intent = Intent(this,ClockInActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

@@ -34,7 +34,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FocusActivity" />
+        <activity android:name=".FocusActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".ClockInActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".AddTask"
+            android:exported="false">
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
