@@ -1,4 +1,5 @@
 package com.example.shiftmateOPSC
+
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -7,12 +8,21 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import java.io.ByteArrayOutputStream
+import java.util.*
 
 class AddTask : AppCompatActivity() {
+
+    // Firebase
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseStorage: FirebaseStorage
+    private lateinit var firebaseDatabase: FirebaseDatabase
 
     private lateinit var startTimeEditText: EditText
     private lateinit var endTimeEditText: EditText
@@ -31,6 +41,11 @@ class AddTask : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_task_layout)
+
+        // Initialize Firebase
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseStorage = FirebaseStorage.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance()
 
         // Initialize views
         startTimeEditText = findViewById(R.id.StartTimeTV)
@@ -56,17 +71,16 @@ class AddTask : AppCompatActivity() {
                 Toast.makeText(this, "Please fill in all mandatory fields", Toast.LENGTH_SHORT).show()
             } else {
                 // All mandatory fields are filled
-                val message =
-                    "Start Time: $startTime\nEnd Time: $endTime\nDescription: $description\nCategory: $category\nDate: $date\n"
-
-                // If imageBitmap is not null, include image details in the message
-                val fullMessage = if (imageBitmap != null) {
-                    "$message Image included: Yes"
+                // Upload image to Firebase Storage
+                if (imageBitmap != null) {
+                    uploadImageToFirebaseStorage(imageBitmap!!, startTime, endTime, description, category, date)
                 } else {
-                    "$message Image included: No"
+                    saveTaskToFirebaseDatabase(null, startTime, endTime, description, category, date)
                 }
-
-                showFullMessageDialog(fullMessage)
+                Toast.makeText(
+                    this, "Task Saved.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
@@ -80,7 +94,7 @@ class AddTask : AppCompatActivity() {
         }
 
         // Set OnDateChangeListener for the calendar view
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             // Store the selected date in the format you desire
             dateSelected = "$year-${month + 1}-$dayOfMonth"
         }
@@ -106,8 +120,7 @@ class AddTask : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array
-    <out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -116,12 +129,46 @@ class AddTask : AppCompatActivity() {
         }
     }
 
-    private fun showFullMessageDialog(message: String) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Task Details")
-        builder.setMessage(message)
-        builder.setPositiveButton("OK", null)
-        val dialog = builder.create()
-        dialog.show()
+    private fun uploadImageToFirebaseStorage(bitmap: Bitmap, startTime: String, endTime: String, description: String, category: String, date: String) {
+        val currentUser = firebaseAuth.currentUser
+        val storageReference = firebaseStorage.reference.child("images/${currentUser?.uid}/${System.currentTimeMillis()}.jpg")
+
+        val baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val imageData = baos.toByteArray()
+
+        val uploadTask = storageReference.putBytes(imageData)
+        uploadTask.addOnSuccessListener { taskSnapshot ->
+            storageReference.downloadUrl.addOnSuccessListener { uri ->
+                val imageUrl = uri.toString()
+                saveTaskToFirebaseDatabase(imageUrl, startTime, endTime, description, category, date)
+            }
+        }.addOnFailureListener { exception ->
+            // Handle error
+        }
+    }
+
+    private fun saveTaskToFirebaseDatabase(imageUrl: String?, startTime: String, endTime: String, description: String, category: String, date: String) {
+        val currentUser = firebaseAuth.currentUser
+        val userUid = currentUser?.uid ?: return  // Return if user is null
+
+        val tasksReference = firebaseDatabase.reference.child("TimeLog").child(userUid)
+
+        val taskMap = HashMap<String, Any>()
+        taskMap["startTime"] = startTime
+        taskMap["endTime"] = endTime
+        taskMap["description"] = description
+        taskMap["category"] = category
+        taskMap["date"] = date
+        imageUrl?.let { taskMap["imageUrl"] = it }
+
+        val taskId = tasksReference.push().key ?: ""
+        tasksReference.child(taskId).setValue(taskMap)
+            .addOnSuccessListener {
+                // Task saved successfully
+                // You can add any further action here if needed
+            }.addOnFailureListener { exception ->
+                // Handle error
+            }
     }
 }
