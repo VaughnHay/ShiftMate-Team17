@@ -59,4 +59,6 @@
     <string name="Chat_Title">Chat Room</string>
     <string name="back_chatLay">Back</string>
     <string name="type_message">Type Message...</string>
+    <string name="added_goal_template">Name: %s, Min Hourly Goal: %s, Max Hourly Goal: %s</string>
+    <string name="no_goals_added">No goals added yet.</string>
 </resources>
