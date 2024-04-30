@@ -1,5 +1,6 @@
 package com.example.shiftmateOPSC
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -15,6 +16,7 @@ class MinMaxGoalAct : AppCompatActivity() {
     private lateinit var displayGoalTextView: TextView
     private lateinit var submitGoalButton: Button
     private lateinit var displayAllGoalsButton: Button
+    private lateinit var displayPreviousButton: Button
 
     private val goalsList = mutableListOf<String>()
 
@@ -28,6 +30,7 @@ class MinMaxGoalAct : AppCompatActivity() {
         displayGoalTextView = findViewById(R.id.displayGoal)
         submitGoalButton = findViewById(R.id.submitGoal)
         displayAllGoalsButton = findViewById(R.id.displayAllGoals)
+        displayPreviousButton = findViewById(R.id.Backbtn)
 
         submitGoalButton.setOnClickListener {
             val goalName = goalNameEditText.text.toString()
@@ -49,6 +52,11 @@ class MinMaxGoalAct : AppCompatActivity() {
         displayAllGoalsButton.setOnClickListener {
             val allGoalsText = goalsList.joinToString("\n\n")
             displayGoalTextView.text = allGoalsText.ifEmpty { getString(R.string.no_goals_added) }
+
+        }
+        displayPreviousButton.setOnClickListener{
+            val intent = Intent(this@MinMaxGoalAct, DashboardActivity::class.java)
+            startActivity(intent)
         }
     }
 }
