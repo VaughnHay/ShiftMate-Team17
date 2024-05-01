@@ -30,7 +30,7 @@
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
         android:gravity="center"
-        android:hint="Leader Board"
+        android:hint="@string/leader_boardTitle"
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -49,7 +49,7 @@
         android:fontFamily="@font/brawler"
         android:text="ShiftMate"
         android:textColor="@android:color/white"
-        android:textSize="28dp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -81,7 +81,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.426"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/leader_Profile1" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
@@ -135,7 +136,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/leaderProfile3" />
 
     <ImageView
         android:id="@+id/leaderUimageView2"
@@ -147,7 +149,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.645"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/leaderProfile2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
