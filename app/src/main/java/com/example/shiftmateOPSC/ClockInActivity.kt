@@ -5,9 +5,10 @@ import android.widget.Button
 import android.widget.CalendarView
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.android.gms.maps.MapView
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -15,7 +16,7 @@ import java.util.Locale
 class ClockInActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
-    private lateinit var mapView: MapView
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,9 @@ class ClockInActivity : AppCompatActivity() {
         //Initializing the Firebase database
         database = FirebaseDatabase.getInstance().reference
 
+        //Initializing Firebase Authentication
+        auth = FirebaseAuth.getInstance()
+
         val clockInBut: Button = findViewById(R.id.clockInBut)
         val clockInBackBut: Button = findViewById(R.id.clockInBackBut)
         val verifyBut: Button = findViewById(R.id.verifyBut)
@@ -31,9 +35,9 @@ class ClockInActivity : AppCompatActivity() {
         val clockInDateEditText: EditText = findViewById(R.id.clockInDateEditText)
         val clockInTimeEditText: EditText = findViewById(R.id.clockInTimeEditText)
         val clockInLocEditText: EditText = findViewById(R.id.clockInLocEditText)
-        val clockInEmpCodeEditText: EditText = findViewById(R.id.clockInEmpCodeEditText)
+        val clockInEmailEditText: EditText = findViewById(R.id.clockInEmailEditText)
 
-        //Listener for the calendarview to update the date field
+        //Listener for the calendar view to update the date field
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val selectedDate = Calendar.getInstance()
             selectedDate.set(year, month, dayOfMonth)
@@ -51,7 +55,18 @@ class ClockInActivity : AppCompatActivity() {
         //Verify button
         verifyBut.setOnClickListener {
             //Implement logic here
-            // checks if employee code provided exists and is assigned to the logged-in user
+            val email = clockInEmailEditText.text.toString()
+            val currentUser = auth.currentUser
+
+            if (currentUser != null && email == currentUser.email) {
+                // Proceed with further verification or action
+            } else {
+                Snackbar.make(
+                    findViewById(android.R.id.content),
+                    "Incorrect email address provided. Please enter the correct email address.",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
         }
 
         // Set onClick listener for the clock-in button
@@ -60,13 +75,19 @@ class ClockInActivity : AppCompatActivity() {
             val date = clockInDateEditText.text.toString()
             val time = clockInTimeEditText.text.toString()
             val location = clockInLocEditText.text.toString()
-            val empCode = clockInEmpCodeEditText.text.toString()
+            val empVerify = clockInEmailEditText.text.toString()
 
             // Save data to Firebase database
-            saveClockInData(date, time, location, empCode)
+            saveClockInData(date, time, location, empVerify)
 
+            //Successful login
+            Snackbar.make(
+                findViewById(android.R.id.content),
+                "You have successfully clocked in.",
+                Snackbar.LENGTH_LONG
+            ).show()
             // Finish the activity or perform any other action
-            finish()
+            //finish()
         }
 
         // Set onClick listener for the back button
@@ -76,16 +97,16 @@ class ClockInActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveClockInData(date: String, time: String, location: String, empCode: String) {
+    private fun saveClockInData(date: String, time: String, location: String, empVerify: String) {
         //saves data to database
-        val clockInData = ClockInData(date, time, location, empCode)
+        val clockInData = ClockInData(date, time, location, empVerify)
         val clockInId = database.child("clock_ins").push().key
         if (clockInId != null) {
             database.child("clock_ins").child(clockInId).setValue(clockInData)
         }
     }
 
-    data class ClockInData(val date: String, val time: String, val location: String, val empCode: String)
+    data class ClockInData(val date: String, val time: String, val location: String, val empVerify: String)
 
     override fun onResume() {
         super.onResume()
@@ -107,3 +128,4 @@ class ClockInActivity : AppCompatActivity() {
         super.onLowMemory()
     }
 }
+

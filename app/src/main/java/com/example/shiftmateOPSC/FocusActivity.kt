@@ -12,7 +12,7 @@ class FocusActivity : AppCompatActivity() {
         val exitButton = findViewById<Button>(R.id.focusExitBut)
 
         exitButton.setOnClickListener {
-            // Perform your exit action here, such as navigating back to the dashboard
+            // navigating back to the dashboard
             onBackPressed() // This will navigate back to the previous activity (dashboard)
         }
     }
