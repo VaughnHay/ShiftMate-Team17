@@ -44,10 +44,10 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*totalHoursButton.setOnClickListener{
-            val intent = Intent(this@DashboardActivity, TotalHoursActivity::class.java)
+        viewTotHrsButton.setOnClickListener{
+            val intent = Intent(this@DashboardActivity, View::class.java)
             startActivity(intent)
-        }*/
+        }
         focusButton.setOnClickListener {
             val intent = Intent(this@DashboardActivity, FocusActivity::class.java)
             startActivity(intent)
