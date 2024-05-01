@@ -10,19 +10,22 @@
         android:id="@+id/leaderBackBut"
         android:layout_width="159dp"
         android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="27dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
-        android:text="Back"
+        android:text="@string/leader_backBtnText"
+        android:textColor="#FFEBEE"
+        android:textColorLink="#FFEBEE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/leaderTitletextView"
         android:layout_width="413dp"
         android:layout_height="115dp"
-        android:layout_marginTop="4dp"
         android:background="#1E3848"
         android:backgroundTint="#1E3848"
         android:fontFamily="@font/brawler"
@@ -33,101 +36,117 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
 
     <TextView
         android:id="@+id/welcomeTextView"
-        tools:ignore="HardcodedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:fontFamily="@font/brawler"
         android:text="ShiftMate"
         android:textColor="@android:color/white"
         android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="16dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/shiftmatelogo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
         android:id="@+id/leaderUimageView"
         android:layout_width="112dp"
         android:layout_height="108dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="268dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426"
         tools:srcCompat="@tools:sample/avatars" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
         android:layout_width="240dp"
         android:layout_height="57dp"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="20dp"
         android:progressBackgroundTint="@color/black"
         android:progressTint="#FFC107"
         android:rating="3.5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar1" />
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.627" />
 
     <RatingBar
         android:id="@+id/ratingBar3"
         android:layout_width="wrap_content"
         android:layout_height="57dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="20dp"
         android:progressBackgroundTint="@color/black"
         android:progressTint="#FFC107"
         android:rating="2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
 
     <RatingBar
         android:id="@+id/ratingBar1"
         android:layout_width="240dp"
         android:layout_height="57dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="16dp"
         android:progressBackgroundTint="@color/black"
         android:progressTint="#FFC107"
         android:rating="4.5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.427" />
 
     <ImageView
         android:id="@+id/leaderUimageView3"
         android:layout_width="112dp"
         android:layout_height="108dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leaderUimageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/leaderUimageView2"
         android:layout_width="112dp"
         android:layout_height="108dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leaderUimageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645"
         tools:srcCompat="@tools:sample/avatars" />
 
 
