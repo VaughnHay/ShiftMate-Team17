@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class Chat: AppCompatActivity () {
+class Chat : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.chat_layout)
 
-        val backButton: Button = findViewById(R.id.chatBackBut)
+        //Using type inference for findViewById
+        val backButton = findViewById<Button>(R.id.chatBackBut)
         backButton.setOnClickListener {
-            // Go back to the DashboardActivity
+            // Go back to the previous activity
             finish()
         }
     }

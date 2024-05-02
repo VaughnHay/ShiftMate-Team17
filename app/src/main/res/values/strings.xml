@@ -72,4 +72,8 @@
     <string name="total_hours">Total Hours</string>
     <string name="leader_backBtnText">Back</string>
     <string name="message_5">Sandile: Yes, you want to join? I had booked this off last month already. Check the latest calendar.</string>
+    <string name="leader_boardTitle">Leader Board</string>
+    <string name="leader_Profile1">UserProfile1</string>
+    <string name="leaderProfile3">User Profile3</string>
+    <string name="leaderProfile2">User Profile2</string>
 </resources>

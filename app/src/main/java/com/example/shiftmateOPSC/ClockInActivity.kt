@@ -108,24 +108,5 @@ class ClockInActivity : AppCompatActivity() {
 
     data class ClockInData(val date: String, val time: String, val location: String, val empVerify: String)
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-    }
 }
 
