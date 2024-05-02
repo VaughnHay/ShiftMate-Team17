@@ -1,20 +1,9 @@
 package com.example.shiftmateOPSC
 
-class Task {
-
-    val name: CharSequence?
-        get() {
-            TODO()
-        }
-
-    val duration: CharSequence?
-        get(){
-            TODO()
-        }
-
-
-    data class Task(val name: String,
-                    val duration: String,
-                    val isComplete: Boolean)
-
-}
+import android.graphics.Bitmap
+import com.google.firebase.database.Exclude
+    data class Task(
+        val name: String = "",
+        val duration: String = "",
+        val isComplete: Boolean = false,
+        @Exclude val imageBitmap: Bitmap? = null)

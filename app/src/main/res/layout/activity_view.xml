@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E3848"
+    tools:context=".View">
+
+    <TextView
+        android:id="@+id/ShiftTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="91dp"
+        android:text="ShiftMate"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logoImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="104dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="31dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/shiftmatelogo"
+        app:layout_constraintBottom_toTopOf="@+id/HtextView"
+        app:layout_constraintEnd_toStartOf="@+id/ShiftTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HtextView"
+        android:layout_width="410dp"
+        android:layout_height="87dp"
+        android:layout_marginBottom="36dp"
+        android:text="Total Hours"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/HtimeRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/HtimeRecyclerView"
+        android:layout_width="403dp"
+        android:layout_height="312dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/Back2mainbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HtextView" />
+
+    <Button
+        android:id="@+id/Back2mainbtn"
+        android:layout_width="146dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="43dp"
+        android:backgroundTint="#1D364A"
+        android:fontFamily="@font/brawler"
+        android:text="Back"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HtimeRecyclerView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

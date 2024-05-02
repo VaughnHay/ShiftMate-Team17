@@ -37,12 +37,27 @@ class MinMaxGoalAct : AppCompatActivity() {
             val minHourGoal = minHourGoalEditText.text.toString()
             val maxHourGoal = maxHourGoalEditText.text.toString()
 
-            val goalInfo = "Name: $goalName, Min Hourly Goal: $minHourGoal, Max Hourly Goal: $maxHourGoal"
-            goalsList.add(goalInfo)
+            if (goalName.isBlank() && minHourGoal.isBlank() && maxHourGoal.isBlank()) {
 
-            displayGoalTextView.text = getString(R.string.added_goal_template, goalName, minHourGoal, maxHourGoal)
+                val noGoalsMessage = "No goals added"
+                displayGoalTextView.text = noGoalsMessage
 
-            Toast.makeText(this, "New goal added!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, noGoalsMessage, Toast.LENGTH_SHORT).show()
+            } else if (goalName.isBlank() || minHourGoal.isBlank() || maxHourGoal.isBlank()) {
+
+                val incompleteFieldsMessage = "Please fill in all goal details"
+                displayGoalTextView.text = incompleteFieldsMessage
+
+                Toast.makeText(this, incompleteFieldsMessage, Toast.LENGTH_SHORT).show()} else {
+                val goalInfo = """
+            Name: $goalName
+            Min Hourly Goal: $minHourGoal
+            Max Hourly Goal: $maxHourGoal
+        """.trimIndent()
+                goalsList.add(goalInfo)
+                displayGoalTextView.text = getString(R.string.added_goal_template, goalName, minHourGoal, maxHourGoal)
+                Toast.makeText(this, "New goal added!", Toast.LENGTH_SHORT).show()
+            }
 
             goalNameEditText.text.clear()
             minHourGoalEditText.text.clear()
