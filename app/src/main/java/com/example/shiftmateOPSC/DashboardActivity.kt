@@ -29,8 +29,10 @@ class DashboardActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Initialize TaskAdapter and set it to RecyclerView
-        tasks = mutableListOf() // Initialize tasks list
-       // taskAdapter = TaskAdapter(tasks)
+        tasks = mutableListOf()
+        taskAdapter = TaskAdapter(tasks) // Pass tasks list to TaskAdapter constructor
+
+        // Set TaskAdapter to RecyclerView
         recyclerView.adapter = taskAdapter
 
         myGoalsButton = findViewById(R.id.myGoalsButton)
