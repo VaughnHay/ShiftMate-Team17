@@ -7,13 +7,14 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import java.io.ByteArrayOutputStream
 import java.util.*
@@ -27,9 +28,9 @@ class AddTask : AppCompatActivity() {
 
     private lateinit var startTimeEditText: EditText
     private lateinit var endTimeEditText: EditText
-
     private lateinit var descriptionEditText: EditText
-    private lateinit var categoryAutoCompleteTextView: AutoCompleteTextView
+    private lateinit var categorySpinner: Spinner
+    private lateinit var categoryACTV: EditText // Added
     private lateinit var saveButton: Button
     private lateinit var takePictureButton: Button
     private lateinit var imageView: ImageView
@@ -56,7 +57,9 @@ class AddTask : AppCompatActivity() {
         startTimeEditText.isFocusable = false
         endTimeEditText.isFocusable = false
         descriptionEditText = findViewById(R.id.DescriptionTV)
-        categoryAutoCompleteTextView = findViewById(R.id.CategoryACTV)
+        categorySpinner = findViewById(R.id.CategorySpin)
+        categoryACTV = findViewById(R.id.CategoryACTV) // Added
+        categoryACTV.visibility = View.GONE // Hide CategoryACTV by default
         saveButton = findViewById(R.id.btnSave)
         takePictureButton = findViewById(R.id.btnTakePic)
         imageView = findViewById(R.id.image_view)
@@ -65,11 +68,14 @@ class AddTask : AppCompatActivity() {
 
         // Set onClickListener for the save button
         saveButton.setOnClickListener {
-            // Get values from EditText, AutoCompleteTextView, and CalendarView
+            // Get values from EditText, Spinner, and CalendarView
             val startTime = startTimeEditText.text.toString()
             val endTime = endTimeEditText.text.toString()
             val description = descriptionEditText.text.toString()
-            val category = categoryAutoCompleteTextView.text.toString()
+            val category = if (categoryACTV.visibility == View.VISIBLE)
+                categoryACTV.text.toString() // If CategoryACTV is visible, get text from it
+            else
+                categorySpinner.selectedItem.toString() // Otherwise, get selected item from Spinner
             val date = dateSelected
 
             // Check if any of the mandatory fields are empty
@@ -117,6 +123,59 @@ class AddTask : AppCompatActivity() {
         // Set onClickListener for the back button
         backButton.setOnClickListener {
             finish()
+        }
+
+        // Retrieve category data for the current user from Firebase and populate Spinner
+        fetchCategoryDataForCurrentUser()
+    }
+
+    private fun fetchCategoryDataForCurrentUser() {
+        val currentUser = firebaseAuth.currentUser
+        currentUser?.uid?.let { userId ->
+            val categoryList = ArrayList<String>()
+            val tasksReference = firebaseDatabase.reference.child("TimeLog").child(userId)
+            tasksReference.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (taskSnapshot in dataSnapshot.children) {
+                        val category = taskSnapshot.child("category").getValue(String::class.java)
+                        category?.let { categoryList.add(it) }
+                    }
+                    if (categoryList.isEmpty()) {
+                        Log.e("AddTask", "No categories found for current user")
+                    } else {
+                        // Add "Add New" option to the list
+                        categoryList.add("Add New")
+                        populateSpinner(categoryList)
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Log.e("AddTask", "Error fetching category data for current user: ${databaseError.message}")
+                }
+            })
+        } ?: run {
+            Log.e("AddTask", "No user logged in")
+        }
+    }
+
+    private fun populateSpinner(categoryList: List<String>) {
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        categorySpinner.adapter = adapter
+
+        categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedItem = parent?.getItemAtPosition(position).toString()
+                if (selectedItem == "Add New") {
+                    // Show CategoryACTV
+                    categoryACTV.visibility = View.VISIBLE
+                } else {
+                    // Hide CategoryACTV
+                    categoryACTV.visibility = View.GONE
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
     }
 
@@ -238,3 +297,5 @@ class AddTask : AppCompatActivity() {
             }
     }
 }
+
+
