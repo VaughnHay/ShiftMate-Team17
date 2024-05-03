@@ -2,16 +2,13 @@ package com.example.shiftmateOPSC
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 class DashboardActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var taskAdapter: TaskAdapter
-    private lateinit var tasks: MutableList<AddTask> // Change to MutableList<AddTask>
     private lateinit var focusButton: Button
     private lateinit var addTaskButton: Button
     private lateinit var clockInButton: Button
@@ -20,21 +17,18 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var leaderBoardButton: Button
     private lateinit var profileButton: Button
     private lateinit var chatButton: Button
+    private lateinit var categoriesLayout: LinearLayout
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var timeLogRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_layout)
 
-        // Initialize RecyclerView
-        recyclerView = findViewById(R.id.taskRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        mAuth = FirebaseAuth.getInstance()
+        timeLogRef = FirebaseDatabase.getInstance().getReference("TimeLog")
 
-        // Initialize TaskAdapter and set it to RecyclerView
-        tasks = mutableListOf()
-        taskAdapter = TaskAdapter(tasks) // Pass tasks list to TaskAdapter constructor
-
-        // Set TaskAdapter to RecyclerView
-        recyclerView.adapter = taskAdapter
+        categoriesLayout = findViewById(R.id.linear_layout_tasks)
 
         myGoalsButton = findViewById(R.id.myGoalsButton)
         viewTotHrsButton = findViewById(R.id.viewTotHrsButton)
@@ -86,26 +80,50 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this@DashboardActivity, Chat::class.java)
             startActivity(intent)
         }
+
+        fetchUserData()
     }
 
-    // Define the request code for adding a task
-    /*private val ADD_TASK_REQUEST_CODE = 100
+    private fun fetchUserData() {
+        val currentUserID = mAuth.currentUser?.uid
+        currentUserID?.let { uid ->
+            timeLogRef.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    categoriesLayout.removeAllViews() // Clear previous views
 
-    // Handle the result from AddTaskActivity
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == ADD_TASK_REQUEST_CODE && resultCode == RESULT_OK) {
-            // Retrieve the task data from the intent
-            val category = data?.getStringExtra("category")
-            val dateOfEntry = data?.getStringExtra("dateOfEntry")
+                    for (data in snapshot.children) {
+                        val categoryName = data.child("category").getValue(String::class.java) ?: ""
+                        val date = data.child("date").getValue(String::class.java) ?: ""
+                        val description = data.child("description").getValue(String::class.java) ?: ""
+                        val endTime = data.child("endTime").getValue(String::class.java) ?: ""
+                        val startTime = data.child("startTime").getValue(String::class.java) ?: ""
 
-            // Add the task to the list
-            if (!category.isNullOrEmpty() && !dateOfEntry.isNullOrEmpty()) {
-                tasks.add(AddTask(category, dateOfEntry)) // Use AddTask constructor
-                taskAdapter.notifyDataSetChanged() // Notify adapter of data change
-            }
+
+                        if (categoryName.isNotEmpty() && date.isNotEmpty() && description.isNotEmpty()
+                            && startTime.isNotEmpty() && endTime.isNotEmpty()) {
+                            val formattedText = "Category: $categoryName\nDate: $date\nDescription: $description\nStart Time: $startTime\nEnd Time: $endTime\n\n"
+
+                            // Create a new TextView programmatically
+                            val textView = android.widget.TextView(this@DashboardActivity)
+                            textView.text = formattedText
+                            textView.textSize = 16f
+                            val layoutParams = LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                            )
+                            layoutParams.setMargins(0, 0, 0, 16)
+                            textView.layoutParams = layoutParams
+
+                            // Add the TextView to the categoriesLayout
+                            categoriesLayout.addView(textView)
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle database error
+                }
+            })
         }
-    }*/
+    }
 }
-
-
