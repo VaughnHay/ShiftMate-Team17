@@ -3,6 +3,7 @@ package com.example.shiftmateOPSC
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -22,7 +23,7 @@ class View : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         timeLogRef = FirebaseDatabase.getInstance().getReference("TimeLog")
         totalHoursButton = findViewById(R.id.totalHoursButton)
-        totalHoursTextView = findViewById(R.id.totalHoursTextView)
+        //totalHoursTextView = findViewById(R.id.totalHoursTextView)
         backBtn = findViewById(R.id.Back2mainbtn)
 
         backBtn.setOnClickListener{
@@ -35,23 +36,41 @@ class View : AppCompatActivity() {
             currentUserID?.let { uid ->
                 timeLogRef.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        var totalHours = 0
+                        val categoriesLayout = findViewById<LinearLayout>(R.id.categoriesLayout)
+                        categoriesLayout.removeAllViews() // Clear previous views
+
                         for (data in snapshot.children) {
+                            val categoryName = data.child("category").getValue(String::class.java) ?: ""
                             val startTime = data.child("startTime").getValue(String::class.java) ?: ""
                             val endTime = data.child("endTime").getValue(String::class.java) ?: ""
 
-                            if (startTime.isNotEmpty() && endTime.isNotEmpty()) {
-                                // Parse the start and end times to calculate the duration
+                            if (categoryName.isNotEmpty() && startTime.isNotEmpty() && endTime.isNotEmpty()) {
                                 val startHour = startTime.substringBefore(":").toInt()
                                 val endHour = endTime.substringBefore(":").toInt()
                                 val duration = endHour - startHour
 
-                                // Add the duration to the total hours
-                                totalHours += duration
+                                val formattedText = "Category Name: $categoryName,      Total Hours: $duration"
+
+                                // Create a new TextView programmatically
+                                val textView = TextView(this@View)
+                                textView.text = formattedText
+                                //textView.setTextColor(Color.BLACK) // Set text color if needed
+                                textView.textSize = 16f // Set text size if needed
+
+                                // Set layout parameters for the TextView
+                                val layoutParams = LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                                )
+                                layoutParams.setMargins(0, 0, 0, 16) // Set margins if needed
+                                textView.layoutParams = layoutParams
+
+                                // Add the TextView to the categoriesLayout
+                                categoriesLayout.addView(textView)
                             }
                         }
-                        totalHoursTextView.text = "Total Hours: $totalHours"
                     }
+
 
 
                     override fun onCancelled(error: DatabaseError) {
