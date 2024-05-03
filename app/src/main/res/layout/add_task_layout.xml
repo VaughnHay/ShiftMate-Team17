@@ -72,7 +72,16 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
-            <AutoCompleteTextView
+            <Spinner
+                android:id="@+id/CategorySpin"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#FFEBEE"
+                android:prompt="@string/selectCat" />
+
+            <EditText
                 android:id="@+id/CategoryACTV"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
@@ -80,7 +89,8 @@
                 android:layout_marginBottom="10dp"
                 android:hint="@string/category"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/white"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/DescriptionTV"
