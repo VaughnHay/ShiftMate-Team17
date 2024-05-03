@@ -3,8 +3,11 @@ package com.example.shiftmateOPSC
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -57,7 +60,7 @@ class DashboardActivity : AppCompatActivity() {
 
         addTaskButton.setOnClickListener {
             // Start the AddTask activity
-            val intent = Intent(this@DashboardActivity,AddTask::class.java)
+            val intent = Intent(this@DashboardActivity, AddTask::class.java)
             startActivity(intent)
         }
 
@@ -66,17 +69,17 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        leaderBoardButton.setOnClickListener{
+        leaderBoardButton.setOnClickListener {
             val intent = Intent(this@DashboardActivity, LeaderBoard::class.java)
             startActivity(intent)
         }
 
-        profileButton.setOnClickListener{
-            val intent = Intent(this@DashboardActivity,Profile::class.java)
+        profileButton.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, Profile::class.java)
             startActivity(intent)
         }
 
-        chatButton.setOnClickListener{
+        chatButton.setOnClickListener {
             val intent = Intent(this@DashboardActivity, Chat::class.java)
             startActivity(intent)
         }
@@ -94,28 +97,44 @@ class DashboardActivity : AppCompatActivity() {
                     for (data in snapshot.children) {
                         val categoryName = data.child("category").getValue(String::class.java) ?: ""
                         val date = data.child("date").getValue(String::class.java) ?: ""
-                        val description = data.child("description").getValue(String::class.java) ?: ""
-                        val endTime = data.child("endTime").getValue(String::class.java) ?: ""
+                        val description =
+                            data.child("description").getValue(String::class.java) ?: ""
                         val startTime = data.child("startTime").getValue(String::class.java) ?: ""
-
+                        val endTime = data.child("endTime").getValue(String::class.java) ?: ""
+                        val imageUrl = data.child("imageUrl").getValue(String::class.java) ?: ""
 
                         if (categoryName.isNotEmpty() && date.isNotEmpty() && description.isNotEmpty()
-                            && startTime.isNotEmpty() && endTime.isNotEmpty()) {
-                            val formattedText = "Category: $categoryName\nDate: $date\nDescription: $description\nStart Time: $startTime\nEnd Time: $endTime\n\n"
+                            && startTime.isNotEmpty() && endTime.isNotEmpty() && imageUrl.isNotEmpty()
+                        ) {
+                            val formattedText =
+                                "\n\nCategory: $categoryName\nDate: $date\nDescription: $description\nStart Time: $startTime\nEnd Time: $endTime \n" +
+                                        "Category Image:\n"
 
-                            // Create a new TextView programmatically
-                            val textView = android.widget.TextView(this@DashboardActivity)
-                            textView.text = formattedText
-                            textView.textSize = 16f
+                            // Create a new LinearLayout for each entry
+                            val layout = LinearLayout(this@DashboardActivity)
+                            layout.orientation = LinearLayout.VERTICAL
                             val layoutParams = LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.MATCH_PARENT,
                                 LinearLayout.LayoutParams.WRAP_CONTENT
                             )
                             layoutParams.setMargins(0, 0, 0, 16)
-                            textView.layoutParams = layoutParams
+                            layout.layoutParams = layoutParams
 
-                            // Add the TextView to the categoriesLayout
-                            categoriesLayout.addView(textView)
+                            // Create and add TextView for formatted text
+                            val textView = TextView(this@DashboardActivity)
+                            textView.text = formattedText
+                            textView.textSize = 16f
+                            layout.addView(textView)
+
+                            // Create and add ImageView for image
+                            val imageView = ImageView(this@DashboardActivity)
+                            Glide.with(this@DashboardActivity)
+                                .load(imageUrl)
+                                .into(imageView)
+                            layout.addView(imageView)
+
+                            // Add the LinearLayout to categoriesLayout
+                            categoriesLayout.addView(layout)
                         }
                     }
                 }
@@ -126,4 +145,6 @@ class DashboardActivity : AppCompatActivity() {
             })
         }
     }
+
 }
+

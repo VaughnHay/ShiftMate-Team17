@@ -68,7 +68,7 @@ class Register : AppCompatActivity() {
                                 .show()
 
                             // Pass user data to profile page using intent extras
-                            val intent = Intent(this, Profile::class.java)
+                            val intent = Intent(this, LoginActivity::class.java)
                             intent.putExtra("userId", userId)
                             intent.putExtra("name", name)
                             intent.putExtra("surname", surname)

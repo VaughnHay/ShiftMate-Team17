@@ -141,10 +141,11 @@ class AddTask : AppCompatActivity() {
                         category?.let { categoryList.add(it) }
                     }
                     if (categoryList.isEmpty()) {
-                        Log.e("AddTask", "No categories found for current user")
+                        // Show CategoryACTV if category list is empty
+                        categoryACTV.visibility = View.VISIBLE
                     } else {
-                        // Add "Add New" option to the list
-                        categoryList.add("Add New")
+                        // Hide CategoryACTV and populate Spinner
+                        categoryACTV.visibility = View.GONE
                         populateSpinner(categoryList)
                     }
                 }
@@ -159,7 +160,10 @@ class AddTask : AppCompatActivity() {
     }
 
     private fun populateSpinner(categoryList: List<String>) {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryList)
+        val categoriesWithAddNew = categoryList.toMutableList()
+        categoriesWithAddNew.add("Add New") // Add "Add New" option to the list
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categoriesWithAddNew)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         categorySpinner.adapter = adapter
 
@@ -167,7 +171,7 @@ class AddTask : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedItem = parent?.getItemAtPosition(position).toString()
                 if (selectedItem == "Add New") {
-                    // Show CategoryACTV
+                    // Show CategoryACTV if "Add New" is selected
                     categoryACTV.visibility = View.VISIBLE
                 } else {
                     // Hide CategoryACTV
@@ -178,6 +182,8 @@ class AddTask : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
     }
+
+
 
     // Function to show TimePickerDialog
     private fun showTimePickerDialog(editText: EditText) {
