@@ -139,6 +139,7 @@ class DashboardActivity : AppCompatActivity() {
                     }
                 }
 
+
                 override fun onCancelled(error: DatabaseError) {
                     // Handle database error
                 }

@@ -171,14 +171,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.288" />
 
+    <SeekBar
+        android:id="@+id/categorySeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:max="100"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:progress="0"
+        android:progressBackgroundTint="@color/Gray"
+        android:progressTint="@color/black"
+        android:thumb="@drawable/seek_bar_thumb"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.448" />
+
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="373dp"
         android:layout_height="376dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913">
+        app:layout_constraintVertical_bias="0.974">
 
         <LinearLayout
             android:id="@+id/linear_layout_tasks"
@@ -363,7 +383,6 @@
                 app:layout_constraintTop_toTopOf="parent" />-->
         </LinearLayout>
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
