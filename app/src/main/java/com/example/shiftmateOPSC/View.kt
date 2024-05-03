@@ -1,66 +1,70 @@
 package com.example.shiftmateOPSC
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 
-class View : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var database: DatabaseReference
-    private lateinit var hourAdapter: HourAdapter
-    private var list: ArrayList<Users2> = ArrayList()
-   // private lateinit var backcButton: Button
+    // Initialize Firebase
+    private val database = FirebaseDatabase.getInstance()
+    private val taskRef = database.getReference("tasks")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_view)
+        setContentView(R.layout.activity_main)
 
-        recyclerView = findViewById(R.id.HtimeRecyclerView);
-        database = FirebaseDatabase.getInstance().getReference("View");
-        recyclerView.setHasFixedSize(true);
+        val recyclerView = findViewById<RecyclerView>(R.id.HtimeRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        hourAdapter = HourAdapter(this, list)
-        recyclerView.adapter = hourAdapter
-       // backcButton = findViewById(R.id.Back2mainbtn)
 
-        database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                list.clear()
-                for (dataSnapshot: DataSnapshot in snapshot.children) {
-                    val categoryHour: Users2? = dataSnapshot.getValue(Users2::class.java)
-                    categoryHour?.let { list.add(it) }
+        // Create an empty list to hold the tasks
+        val tasks = mutableListOf<Task22>()
+        val adapter = TaskAdapter2(tasks)
+        recyclerView.adapter = adapter
+
+        // Set up ValueEventListener to listen for changes in Firebase database
+        taskRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // Clear the existing tasks
+                tasks.clear()
+
+                // Iterate through the dataSnapshot to get the tasks
+                for (snapshot in dataSnapshot.children) {
+                    val task = snapshot.getValue(Task22::class.java)
+                    task?.let {
+                        // Calculate total hours and update the task
+                        val totalHours = calculateTotalHours(it.startTime, it.endTime)
+                        it.totalHours = totalHours
+                        // Add the updated task to the list
+                        tasks.add(it)
+                    }
                 }
-                hourAdapter.notifyDataSetChanged()
+
+                // Update the adapter with the new list of tasks
+                adapter.notifyDataSetChanged()
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                // Handle database error
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle errors
             }
         })
-
     }
 
-    // Function to enable edge-to-edge display
-    private fun enableEdgeToEdge() {
-        ViewCompat.setOnApplyWindowInsetsListener(
-            findViewById(android.R.id.content)
-        ) { _, insets ->
-            insets?.consumeSystemWindowInsets()
-            insets
-        }
+    // Function to calculate total hours
+    private fun calculateTotalHours(startTime: String, endTime: String): Int {
+        val startHour = startTime.split(":")[0].toInt()
+        val startMinute = startTime.split(":")[1].toInt()
+
+        val endHour = endTime.split(":")[0].toInt()
+        val endMinute = endTime.split(":")[1].toInt()
+
+        val totalMinutes = (endHour * 60 + endMinute) - (startHour * 60 + startMinute)
+        val totalHours = totalMinutes / 60
+
+        return totalHours
     }
 
-   /*  backcButton.setOnClickListener{
-        finish()
-    } */
 }
+
