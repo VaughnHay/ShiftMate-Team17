@@ -87,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#1D364A"
+            android:textColor="@color/white"
             android:text="Submit Goal" />
 
         <Button
@@ -95,6 +96,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="#1D364A"
+            android:textColor="@color/white"
             android:text="Display all goods" />
 
         <ScrollView
@@ -117,6 +119,7 @@
             android:layout_width="137dp"
             android:layout_height="51dp"
             android:backgroundTint="#1D364A"
+            android:textColor="@color/white"
             android:text="Back" />
 
     </LinearLayout>

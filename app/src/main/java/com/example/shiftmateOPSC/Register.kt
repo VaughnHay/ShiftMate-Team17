@@ -37,7 +37,7 @@ class Register : AppCompatActivity() {
         registerButton.setOnClickListener {
             registerUser()
         }
-        bckButton.setOnClickListener{
+        bckButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
@@ -60,22 +60,40 @@ class Register : AppCompatActivity() {
                     val userId = mAuth.currentUser?.uid ?: ""
                     val userData = Users(userId, name, surname, email)
 
+                    // Save user data to Firebase Realtime Database
                     usersRef.child(userId).setValue(userData)
                         .addOnCompleteListener {
-                            Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, MainActivity::class.java)
+                            // Registration successful, navigate to profile page
+                            Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT)
+                                .show()
+
+                            // Pass user data to profile page using intent extras
+                            val intent = Intent(this, Profile::class.java)
+                            intent.putExtra("userId", userId)
+                            intent.putExtra("name", name)
+                            intent.putExtra("surname", surname)
+                            intent.putExtra("email", email)
                             startActivity(intent)
                             finish() // Close the register activity
                         }
                         .addOnFailureListener { err ->
-                            Toast.makeText(this, "Error saving user data: ${err.message}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                "Error saving user data: ${err.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                 } else {
-                    Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Registration failed: ${task.exception?.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
             .addOnFailureListener { err ->
-                Toast.makeText(this, "Error creating user: ${err.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Error creating user: ${err.message}", Toast.LENGTH_LONG)
+                    .show()
             }
     }
 }

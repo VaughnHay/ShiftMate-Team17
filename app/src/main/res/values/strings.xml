@@ -14,6 +14,12 @@
     <string name="enter_focus_session">Enter Focus Session</string>
     <string name="completion_status">Completion Status</string>
     <string name="time_spent_on_task">Time Spent on Task</string>
+    <string-array name="role_options">
+        <item>Manager</item>
+        <item>Finance Manager</item>
+        <item>Administrator</item>
+        <item>Developer</item>
+    </string-array>
     <string name="_1_5_hrs">1,5 hrs</string>
     <string name="project_x_details">Project X Details</string>
     <string name="project_x_details_title">Project X Details</string>

@@ -1,70 +1,64 @@
 package com.example.shiftmateOPSC
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class MainActivity : AppCompatActivity() {
-
-    // Initialize Firebase
-    private val database = FirebaseDatabase.getInstance()
-    private val taskRef = database.getReference("tasks")
+class View : AppCompatActivity() {
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var timeLogRef: DatabaseReference
+    private lateinit var totalHoursButton: Button
+    private lateinit var totalHoursTextView: TextView
+    private lateinit var backBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_view)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.HtimeRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        mAuth = FirebaseAuth.getInstance()
+        timeLogRef = FirebaseDatabase.getInstance().getReference("TimeLog")
+        totalHoursButton = findViewById(R.id.totalHoursButton)
+        totalHoursTextView = findViewById(R.id.totalHoursTextView)
+        backBtn = findViewById(R.id.Back2mainbtn)
 
-        // Create an empty list to hold the tasks
-        val tasks = mutableListOf<Task22>()
-        val adapter = TaskAdapter2(tasks)
-        recyclerView.adapter = adapter
+        backBtn.setOnClickListener{
+            startActivity(Intent(this@View, DashboardActivity::class.java))
+            finish()
+        }
 
-        // Set up ValueEventListener to listen for changes in Firebase database
-        taskRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Clear the existing tasks
-                tasks.clear()
+        totalHoursButton.setOnClickListener {
+            val currentUserID = mAuth.currentUser?.uid
+            currentUserID?.let { uid ->
+                timeLogRef.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        var totalHours = 0
+                        for (data in snapshot.children) {
+                            val startTime = data.child("startTime").getValue(String::class.java) ?: ""
+                            val endTime = data.child("endTime").getValue(String::class.java) ?: ""
 
-                // Iterate through the dataSnapshot to get the tasks
-                for (snapshot in dataSnapshot.children) {
-                    val task = snapshot.getValue(Task22::class.java)
-                    task?.let {
-                        // Calculate total hours and update the task
-                        val totalHours = calculateTotalHours(it.startTime, it.endTime)
-                        it.totalHours = totalHours
-                        // Add the updated task to the list
-                        tasks.add(it)
+                            if (startTime.isNotEmpty() && endTime.isNotEmpty()) {
+                                // Parse the start and end times to calculate the duration
+                                val startHour = startTime.substringBefore(":").toInt()
+                                val endHour = endTime.substringBefore(":").toInt()
+                                val duration = endHour - startHour
+
+                                // Add the duration to the total hours
+                                totalHours += duration
+                            }
+                        }
+                        totalHoursTextView.text = "Total Hours: $totalHours"
                     }
-                }
 
-                // Update the adapter with the new list of tasks
-                adapter.notifyDataSetChanged()
+
+                    override fun onCancelled(error: DatabaseError) {
+                        // Handle database error
+                    }
+                })
             }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle errors
-            }
-        })
+        }
     }
-
-    // Function to calculate total hours
-    private fun calculateTotalHours(startTime: String, endTime: String): Int {
-        val startHour = startTime.split(":")[0].toInt()
-        val startMinute = startTime.split(":")[1].toInt()
-
-        val endHour = endTime.split(":")[0].toInt()
-        val endMinute = endTime.split(":")[1].toInt()
-
-        val totalMinutes = (endHour * 60 + endMinute) - (startHour * 60 + startMinute)
-        val totalHours = totalMinutes / 60
-
-        return totalHours
-    }
-
 }
-

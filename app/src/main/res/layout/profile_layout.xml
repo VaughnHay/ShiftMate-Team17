@@ -98,7 +98,7 @@
             android:autofillHints=""
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
-            android:hint="@string/passHash_profileLay"
+            android:hint="Password: **********"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColor="@color/white"
@@ -147,24 +147,40 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.384" />
 
-        <EditText
-            android:id="@+id/profileRoleEditText"
+        <!-- Spinner for Role Selection -->
+
+
+        <TextView
+            android:id="@+id/roleLabelTextView"
+            android:layout_width="91dp"
+            android:layout_height="31dp"
+            android:fontFamily="@font/brawler"
+            android:text="Role:"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.187"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.591" />
+
+        <Spinner
+            android:id="@+id/profileRoleSpinner"
             android:layout_width="292dp"
             android:layout_height="48dp"
-            android:autofillHints=""
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/brawler"
-            android:hint="@string/role"
-            android:inputType="text"
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.588" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/roleLabelTextView"
+            app:layout_constraintTop_toBottomOf="@id/logoImageView"
+            app:layout_constraintVertical_bias="0.525" />
 
         <ImageView
             android:id="@+id/profileImageView"

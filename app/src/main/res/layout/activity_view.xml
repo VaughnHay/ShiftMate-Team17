@@ -46,23 +46,41 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/HtimeRecyclerView"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/HtimeRecyclerView"
-        android:layout_width="403dp"
-        android:layout_height="312dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="30dp"
+
+    <Button
+        android:id="@+id/totalHoursButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="76dp"
+        android:text="Show Total Hours"
         app:layout_constraintBottom_toTopOf="@+id/Back2mainbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HtextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/totalHoursTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/totalHoursButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginEnd="155dp"
+        android:text="Total Hours: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Back2mainbtn"
@@ -71,10 +89,11 @@
         android:layout_marginBottom="43dp"
         android:backgroundTint="#1D364A"
         android:fontFamily="@font/brawler"
+        android:textColor="@color/white"
         android:text="Back"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HtimeRecyclerView" />
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

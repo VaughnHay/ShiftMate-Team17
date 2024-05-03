@@ -57,7 +57,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         viewTotHrsButton.setOnClickListener {
-            val intent = Intent(this@DashboardActivity, View::class.java)
+            val intent = Intent(this@DashboardActivity, com.example.shiftmateOPSC.View::class.java)
             startActivity(intent)
         }
 
