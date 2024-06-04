@@ -7,6 +7,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MinMaxGoalAct : AppCompatActivity() {
 
@@ -18,11 +21,16 @@ class MinMaxGoalAct : AppCompatActivity() {
     private lateinit var displayAllGoalsButton: Button
     private lateinit var displayPreviousButton: Button
 
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var goalsRef: DatabaseReference
     private val goalsList = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_min_max_goal)
+
+        mAuth = FirebaseAuth.getInstance()
+        goalsRef = FirebaseDatabase.getInstance().getReference("Goals")
 
         goalNameEditText = findViewById(R.id.goalName)
         minHourGoalEditText = findViewById(R.id.minHourGoal)
@@ -38,25 +46,15 @@ class MinMaxGoalAct : AppCompatActivity() {
             val maxHourGoal = maxHourGoalEditText.text.toString()
 
             if (goalName.isBlank() && minHourGoal.isBlank() && maxHourGoal.isBlank()) {
-
                 val noGoalsMessage = "No goals added"
                 displayGoalTextView.text = noGoalsMessage
-
                 Toast.makeText(this, noGoalsMessage, Toast.LENGTH_SHORT).show()
             } else if (goalName.isBlank() || minHourGoal.isBlank() || maxHourGoal.isBlank()) {
-
                 val incompleteFieldsMessage = "Please fill in all goal details"
                 displayGoalTextView.text = incompleteFieldsMessage
-
-                Toast.makeText(this, incompleteFieldsMessage, Toast.LENGTH_SHORT).show()} else {
-                val goalInfo = """
-            Name: $goalName
-            Min Hourly Goal: $minHourGoal
-            Max Hourly Goal: $maxHourGoal
-        """.trimIndent()
-                goalsList.add(goalInfo)
-                displayGoalTextView.text = getString(R.string.added_goal_template, goalName, minHourGoal, maxHourGoal)
-                Toast.makeText(this, "New goal added!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, incompleteFieldsMessage, Toast.LENGTH_SHORT).show()
+            } else {
+                addGoalToDatabase(goalName, minHourGoal, maxHourGoal)
             }
 
             goalNameEditText.text.clear()
@@ -67,11 +65,36 @@ class MinMaxGoalAct : AppCompatActivity() {
         displayAllGoalsButton.setOnClickListener {
             val allGoalsText = goalsList.joinToString("\n\n")
             displayGoalTextView.text = allGoalsText.ifEmpty { getString(R.string.no_goals_added) }
-
         }
-        displayPreviousButton.setOnClickListener{
+
+        displayPreviousButton.setOnClickListener {
             val intent = Intent(this@MinMaxGoalAct, DashboardActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun addGoalToDatabase(goalName: String, minHourGoal: String, maxHourGoal: String) {
+        val userId = mAuth.currentUser?.uid ?: return
+        val goalId = goalsRef.push().key ?: return
+        val goal = Goal(goalId, userId, goalName, minHourGoal, maxHourGoal)
+
+        goalsRef.child(goalId).setValue(goal)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val goalInfo = """
+                        Name: $goalName
+                        Min Hourly Goal: $minHourGoal
+                        Max Hourly Goal: $maxHourGoal
+                    """.trimIndent()
+                    goalsList.add(goalInfo)
+                    displayGoalTextView.text = getString(R.string.added_goal_template, goalName, minHourGoal, maxHourGoal)
+                    Toast.makeText(this, "New goal added!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Failed to add goal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { err ->
+                Toast.makeText(this, "Error: ${err.message}", Toast.LENGTH_LONG).show()
+            }
     }
 }
