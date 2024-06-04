@@ -19,9 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShiftMate"
         tools:targetApi="31">
+
         <activity
             android:name=".TaskAdapterHrs"
             android:exported="false" />
+
         <activity
             android:name=".View"
             android:exported="true"></activity>

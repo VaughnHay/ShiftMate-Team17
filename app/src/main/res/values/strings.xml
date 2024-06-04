@@ -83,4 +83,7 @@
     <string name="leader_Profile1">UserProfile1</string>
     <string name="leaderProfile3">User Profile3</string>
     <string name="leaderProfile2">User Profile2</string>
+    <string name="filter">Filter</string>
+    <string name="select_end_date">Select End Date</string>
+    <string name="select_start_date">Select Start Date</string>
 </resources>

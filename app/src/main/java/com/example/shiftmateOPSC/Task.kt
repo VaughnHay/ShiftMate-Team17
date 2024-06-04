@@ -6,4 +6,6 @@ import com.google.firebase.database.Exclude
         val name: String = "",
         val duration: String = "",
         val isComplete: Boolean = false,
-        @Exclude val imageBitmap: Bitmap? = null)
+        val date: String = "",
+        @Exclude val imageBitmap: Bitmap? = null) {
+    }

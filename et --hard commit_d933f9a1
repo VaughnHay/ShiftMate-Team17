@@ -1,0 +1,34 @@
+[33m23c1500[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m register button resource added
+[33md29a1dd[m Dashboard layout constraints and chat layout rectified
+[33m59c00f8[m Minor update to the AddTask page.
+[33m7f609c8[m Upgraded functionality of the AddTask page. Still unable to save the data to a database yet, however picture functionality should be working but will need tested on a device. Image is not being saved with the other info yet.
+[33m6c41fac[m Basic functionality of the AddTask page completed. No ability to take a photo or save the data to a database yet.
+[33m44f2b9e[m Updated the layout of components in the add_task_layout.xml page
+[33m54fe9a1[m Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+[33m9006a99[m Updated the layout of components in the add_task_layout.xml page
+[33md933f9a[m fixed register button on login page
+[33me713723[m Set login_layout as the startup page
+[33mf58e685[m Fixed Layout Constraint issues on the task_details_layout.xml page.
+[33mdf06d10[m Fixed Layout Constraint issues on the profile_layout.xml page.
+[33m7bba835[m Fixed Layout Constraint issues on the leader_board_layout.xml page.
+[33me3c6087[m Fixed Layout Constraint issues on the clockin_layout.xml page.
+[33m1629b95[m Fixed Layout Constraint issues on the chat_layout.xml page.
+[33ma50622d[m Fixed Layout Constraint issues on the add_task_layout.xml page.
+[33m968b6ea[m Fixed Login/Registration constraints
+[33m9c54497[m Dashboard layout constraints rectified
+[33m7323d1e[m added login and registration functionality
+[33mada26b1[m Dashboard and all relevant code added. Constraints, ID's and layout for add task, profile, and register were adjusted. Task_item.xml file was added along side the TaskAdapter and Task classes
+[33m26d34bf[m Merged commits
+[33m9298c38[m Merge remote-tracking branch 'origin/master'
+[33m8cc7ba9[m Constraints and IDs complete. Constraints for dashboard needs to get reworked. task_item page was added
+[33mf8cae6f[m Fixing up ID for buttons/textbox/progressbar etc
+[33m6e2a6e0[m Reeworking the dashboard constraints
+[33mdb692f2[m was getting an immediate file name error message on my side "'-' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore" added underscores instead of dashes but picture was not visable to begin with
+[33m63c4f25[m Resolved merge conflict in register_layout.xml
+[33mf090202[m added white text to register_layout.xml
+[33m235ea0f[m added white text to register_layout.xml
+[33m9b03dc2[m added white text
+[33mbbbf98f[m constraints for clockin, focus, chat completed. Constraints for dashboard needs to get reworked. Leader board, profile and items need to be done
+[33md76e8b8[m contraints for register and login complete
+[33m1ea3e59[m setting contraints
+[33macf52de[m Layout for Shift Mate. Fix constraints and implement login.
