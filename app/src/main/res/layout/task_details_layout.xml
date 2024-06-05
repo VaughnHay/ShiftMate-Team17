@@ -60,7 +60,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="83dp"
         android:pointerIcon="arrow"
-        android:progress="50"
+        android:progress="0"
         android:progressBackgroundTint="#FF9800"
         android:progressTint="#FF9800"
         app:layout_constraintEnd_toEndOf="parent"

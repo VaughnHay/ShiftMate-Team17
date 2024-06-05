@@ -50,6 +50,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var tasksRecyclerView: RecyclerView
     private lateinit var taskAdapter: TaskAdapter
     private val tasksList = mutableListOf<Task>()
+
     //private val filteredTasksList = mutableListOf<Task>()
 
     private var startDate: Date? = null
