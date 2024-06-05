@@ -8,8 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class MinMaxGoalAct : AppCompatActivity() {
 
@@ -63,8 +62,7 @@ class MinMaxGoalAct : AppCompatActivity() {
         }
 
         displayAllGoalsButton.setOnClickListener {
-            val allGoalsText = goalsList.joinToString("\n\n")
-            displayGoalTextView.text = allGoalsText.ifEmpty { getString(R.string.no_goals_added) }
+            fetchAllGoals()
         }
 
         displayPreviousButton.setOnClickListener {
@@ -96,5 +94,31 @@ class MinMaxGoalAct : AppCompatActivity() {
             .addOnFailureListener { err ->
                 Toast.makeText(this, "Error: ${err.message}", Toast.LENGTH_LONG).show()
             }
+    }
+
+    private fun fetchAllGoals() {
+        val userId = mAuth.currentUser?.uid ?: return
+        goalsRef.orderByChild("userId").equalTo(userId).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                goalsList.clear()
+                for (goalSnapshot in snapshot.children) {
+                    val goal = goalSnapshot.getValue(Goal::class.java)
+                    if (goal != null) {
+                        val goalInfo = """
+                            Name: ${goal.goalName}
+                            Min Hourly Goal: ${goal.minHourGoal}
+                            Max Hourly Goal: ${goal.maxHourGoal}
+                        """.trimIndent()
+                        goalsList.add(goalInfo)
+                    }
+                }
+                val allGoalsText = goalsList.joinToString("\n\n")
+                displayGoalTextView.text = allGoalsText.ifEmpty { getString(R.string.no_goals_added) }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@MinMaxGoalAct, "Failed to fetch goals: ${error.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

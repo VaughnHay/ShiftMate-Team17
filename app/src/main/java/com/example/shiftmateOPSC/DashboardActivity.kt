@@ -97,18 +97,19 @@ class DashboardActivity : AppCompatActivity() {
                     for (data in snapshot.children) {
                         val categoryName = data.child("category").getValue(String::class.java) ?: ""
                         val date = data.child("date").getValue(String::class.java) ?: ""
-                        val description =
-                            data.child("description").getValue(String::class.java) ?: ""
+                        val description = data.child("description").getValue(String::class.java) ?: ""
                         val startTime = data.child("startTime").getValue(String::class.java) ?: ""
                         val endTime = data.child("endTime").getValue(String::class.java) ?: ""
                         val imageUrl = data.child("imageUrl").getValue(String::class.java) ?: ""
 
-                        if (categoryName.isNotEmpty() && date.isNotEmpty() && description.isNotEmpty()
-                            && startTime.isNotEmpty() && endTime.isNotEmpty() && imageUrl.isNotEmpty()
-                        ) {
-                            val formattedText =
-                                "\n\nCategory: $categoryName\nDate: $date\nDescription: $description\nStart Time: $startTime\nEnd Time: $endTime \n" +
-                                        "Category Image:\n"
+                        if (categoryName.isNotEmpty() && date.isNotEmpty() && description.isNotEmpty() && startTime.isNotEmpty() && endTime.isNotEmpty()) {
+                            val formattedText = """
+                            Category: $categoryName
+                            Date: $date
+                            Description: $description
+                            Start Time: $startTime
+                            End Time: $endTime
+                        """.trimIndent()
 
                             // Create a new LinearLayout for each entry
                             val layout = LinearLayout(this@DashboardActivity)
@@ -126,12 +127,14 @@ class DashboardActivity : AppCompatActivity() {
                             textView.textSize = 16f
                             layout.addView(textView)
 
-                            // Create and add ImageView for image
-                            val imageView = ImageView(this@DashboardActivity)
-                            Glide.with(this@DashboardActivity)
-                                .load(imageUrl)
-                                .into(imageView)
-                            layout.addView(imageView)
+                            // If there's an image URL, create and add ImageView for image
+                            if (imageUrl.isNotEmpty()) {
+                                val imageView = ImageView(this@DashboardActivity)
+                                Glide.with(this@DashboardActivity)
+                                    .load(imageUrl)
+                                    .into(imageView)
+                                layout.addView(imageView)
+                            }
 
                             // Add the LinearLayout to categoriesLayout
                             categoriesLayout.addView(layout)
@@ -139,13 +142,13 @@ class DashboardActivity : AppCompatActivity() {
                     }
                 }
 
-
                 override fun onCancelled(error: DatabaseError) {
                     // Handle database error
                 }
             })
         }
     }
+
 
 }
 
