@@ -1,0 +1,239 @@
+[33mcommit da4e58b103692ba0bb160d60392c72484bce7905[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31mshift/main[m[33m)[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Wed Jun 5 19:57:17 2024 +0200
+
+    added display for all goals from database
+
+[33mcommit 133e53390e5b903dd98f2a39a5e413c2217dd86d[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Wed Jun 5 18:56:45 2024 +0200
+
+    added chat room
+
+[33mcommit ad295655bfa05f28c4a2b876ab8ddae61355808b[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Tue Jun 4 16:50:47 2024 +0200
+
+    Updated Min/Max and added working chat room
+
+[33mcommit 976ab8df68a4e144da405636d0046937f060a0f5[m[33m ([m[1;31mnewrepo/main[m[33m)[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 17:06:39 2024 +0200
+
+    ShiftMate Time Tracking application for OPSC Team 17
+
+[33mcommit 1d319ea05dfb53a009b33e9553b7aa0d12792a75[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 16:43:13 2024 +0200
+
+    changed Exit button in focus page
+
+[33mcommit 9ed5510dfb123c06d032951a729d93cb6a1d924a[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 16:12:12 2024 +0200
+
+    fixed drop down not working for new user
+
+[33mcommit 35e22a106a8a36f188bbc2cc90e752af7b2703d1[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 14:42:55 2024 +0200
+
+    added category to dashboard, so basically we finished
+
+[33mcommit 85a7ddf221e79179887f5d7c0d21d9fab40f06ee[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 14:21:02 2024 +0200
+
+    Finalized Total hours Page
+
+[33mcommit 71d2f2e55f08ad616bce48e44e9be084309f7a42[m
+Merge: dfd357e 4bcf389
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 13:47:16 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit dfd357ebfc7716f59309409f2fb48965e9d22d32[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Fri May 3 13:47:06 2024 +0200
+
+    fixed total hours
+
+[33mcommit 4bcf389268c5749e57d0cf231bf7b29a7e76c771[m
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Fri May 3 13:27:56 2024 +0200
+
+    Added use of a Spinner to select a category in Add Task page
+
+[33mcommit 5264809a2eee9be797cdda59e463368e80671903[m
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Fri May 3 10:44:13 2024 +0200
+
+    Changed time selection on the add task page to make use of timepickers
+
+[33mcommit 1f8df1fba2f42bf521a530c5700e67e74aa881ca[m
+Merge: 2c54059 75dcbf8
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Fri May 3 10:11:41 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit 75dcbf8ddec4a7f3ffee8000ee5eee4e351decf7[m
+Author: LeboGP <104358403+LeboGP@users.noreply.github.com>
+Date:   Fri May 3 02:59:54 2024 +0200
+
+    Updated view page done by Lebo_GP
+
+[33mcommit 2c54059b9a2469e116622ff3148eb1a1c680d79a[m
+Merge: e7d90d3 364cd13
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Thu May 2 21:36:25 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit 364cd138940e957bad6658445d8fcf4822dc476e[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Thu May 2 16:30:34 2024 +0200
+
+    fixed crashing error after login
+
+[33mcommit 3bf868f0655a51bdb17ec4194446711338364ad9[m
+Merge: f2c815b 8476ba8
+Author: LeboGP <104358403+LeboGP@users.noreply.github.com>
+Date:   Thu May 2 02:35:48 2024 +0200
+
+    Hours view page done by Lebo_GP.
+
+[33mcommit 8476ba8805fc6fd8faf49394996687ac7c24c14c[m
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Thu May 2 01:20:37 2024 +0200
+
+    Camera feature working. Code to display added tasks to dashboard created
+
+[33mcommit f2c815b2a8b55ad4418f10fa8779c1b4b3018bd8[m
+Author: LeboGP <104358403+LeboGP@users.noreply.github.com>
+Date:   Thu May 2 01:19:50 2024 +0200
+
+    Hours view page done by Lebo_GP.
+
+[33mcommit 647ea7f2b9cda5ed60476b96694dd94cd4a53a07[m
+Merge: 13a66e4 46ff31c
+Author: LeboGP <104358403+LeboGP@users.noreply.github.com>
+Date:   Thu May 2 01:19:19 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit 13a66e42d2fa65ca774249a89a730102c797b7dc[m
+Author: LeboGP <104358403+LeboGP@users.noreply.github.com>
+Date:   Wed May 1 23:42:20 2024 +0200
+
+    Hours view page done by Lebo_GP.
+
+[33mcommit 46ff31c6df26b783f4eb8d822cdadc5f6913d87d[m
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Wed May 1 19:25:41 2024 +0200
+
+    Buttons added to dashboard layout. Each of their redirects working too.
+
+[33mcommit b5b1c4abec71e11a0660c642b650dfd5c697c855[m
+Author: ST10051447 <ST10051447@vcconnect.edu.za>
+Date:   Wed May 1 16:06:36 2024 +0200
+
+    Added scroll view to display further goals if user inputs more than 4
+    fixed up frontend as much as i could under the linerlayout😒
+    
+    made fonts to white so they are visable
+    
+    added exception handling so that message pops up if no goals, goals have been added and if the user is still yet to input goals
+    
+    fixed string output so that they stack and arent in a single row
+
+[33mcommit d610e4e7ae42c53820704e6cee903e591826360b[m
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Tue Apr 30 19:28:38 2024 +0200
+
+    Back button on AddTask class added
+
+[33mcommit 79a58d8764b91ec0fd538e9d32d7aeca32921903[m
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Tue Apr 30 19:26:25 2024 +0200
+
+    My goals and total hours button added to dashboard_layout.xml. Scrollview added to display added tasks. Clockin view adjusted. Buttons all direct correctly to the relevant pages and back.
+
+[33mcommit f18dad48d0e01b061a1c3b403991fdb8acea872c[m
+Merge: cd11078 a9211e8
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Tue Apr 30 15:19:17 2024 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       app/src/main/AndroidManifest.xml
+
+[33mcommit cd110780041b2468231e8420534989755ad0ac55[m
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Tue Apr 30 15:17:12 2024 +0200
+
+    Button on dashboard added with functioning redirects.
+
+[33mcommit a9211e8b9cc6876d8af424e9424dfa2374eb43ef[m
+Author: VaughnHay <st10044023@vcconnect.edu.za>
+Date:   Tue Apr 30 12:43:36 2024 +0200
+
+    changed icon to shift mate logo
+
+[33mcommit e7d90d383fbf33effc5cb783441f3ef99a5065ee[m
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Tue Apr 30 12:29:11 2024 +0200
+
+    Added notification that a task has been saved
+
+[33mcommit 1275ad268c89201730d2cc018393fc6c65a20f6d[m
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Tue Apr 30 12:10:45 2024 +0200
+
+    Added ability to save to a database to the AddTask app
+
+[33mcommit dfb8955908d2b502cfc747bae9a2cdfd34be2b9c[m
+Merge: 886d191 1db57de
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Tue Apr 30 12:10:22 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit 1db57deba1bd44a40727504d5c18e781ea82d90f[m
+Author: ST10051447 <ST10051447@vcconnect.edu.za>
+Date:   Tue Apr 30 12:08:13 2024 +0200
+
+    Added back button to dashboard
+
+[33mcommit 886d19126987d4c3a8469ff2d2199d9a79e774e4[m
+Merge: 36b3d33 93d0861
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Tue Apr 30 12:02:37 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit 93d086147c52b00092e198a304318414059298cc[m
+Author: ST10051447 <ST10051447@vcconnect.edu.za>
+Date:   Tue Apr 30 11:45:39 2024 +0200
+
+    added MinMaxAct
+
+[33mcommit 36b3d3323439fbe33d4755d8e16bfb8eed8f0390[m
+Merge: e5a20e2 0249623
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Tue Apr 30 10:19:46 2024 +0200
+
+    Merge branch 'master' of https://github.com/ST10050571/ShiftMate
+
+[33mcommit 0249623e9211850a1135108f3a58214340c12ccc[m
+Author: ST10050571 <ST10050571@vcconnect.edu.za>
+Date:   Tue Apr 30 07:24:23 2024 +0200
+
+    Focus and add task button redirect implemented for the dashboard_layout.xml
+
+[33mcommit e5a20e2bf6c62aa47daaf9e98bd8423bbf8c0390[m
+Merge: 0b519db 0ec58f0
+Author: ryanquinn <st10135847@vcconnect.edu.za>
+Date:   Mon Apr 29 22
