@@ -49,7 +49,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         focusButton.setOnClickListener {
-            val intent = Intent(this@DashboardActivity, FocusActivity::class.java)
+            val intent = Intent(this@DashboardActivity, FocusCategoryActivity::class.java)
             startActivity(intent)
         }
 
