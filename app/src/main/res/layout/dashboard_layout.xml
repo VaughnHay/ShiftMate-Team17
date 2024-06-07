@@ -44,9 +44,9 @@
         app:layout_constraintVertical_bias="0.048"
         tools:ignore="HardcodedText" />
 
-    <ScrollView
-        android:layout_width="315dp"
-        android:layout_height="170dp"
+    <HorizontalScrollView
+        android:layout_width="391dp"
+        android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +54,9 @@
         app:layout_constraintVertical_bias="0.211">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/profileButton"
@@ -98,7 +98,6 @@
                 android:id="@+id/addTaskButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 android:backgroundTint="#1D364A"
                 android:fontFamily="@font/brawler"
                 android:text="@string/add_new_task"
@@ -132,7 +131,7 @@
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
     <ScrollView
         android:id="@+id/scrollView3"
