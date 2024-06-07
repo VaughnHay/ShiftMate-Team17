@@ -72,6 +72,7 @@
         <activity
             android:name=".Chat"
             android:exported="false" />
+        <activity android:name=".GraphActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
