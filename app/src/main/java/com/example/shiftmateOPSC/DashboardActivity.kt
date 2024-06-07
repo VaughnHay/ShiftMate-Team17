@@ -39,6 +39,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var myGoalsButton: Button
     private lateinit var viewTotHrsButton: Button
     private lateinit var leaderBoardButton: Button
+    private lateinit var graph: Button
     private lateinit var profileButton: Button
     private lateinit var chatButton: Button
     private lateinit var categoriesLayout: LinearLayout
@@ -78,6 +79,7 @@ class DashboardActivity : AppCompatActivity() {
         endDateButton = findViewById(R.id.endDateButton)
         filterButton = findViewById(R.id.filterButton)
         tasksRecyclerView = findViewById(R.id.taskRecyclerView)
+        graph = findViewById(R.id.graphButton)
 
         // Set click listeners
         myGoalsButton.setOnClickListener {
@@ -86,7 +88,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         focusButton.setOnClickListener {
-            val intent = Intent(this@DashboardActivity, FocusActivity::class.java)
+            val intent = Intent(this@DashboardActivity, FocusCategoryActivity::class.java)
             startActivity(intent)
         }
 
@@ -118,6 +120,10 @@ class DashboardActivity : AppCompatActivity() {
 
         chatButton.setOnClickListener {
             val intent = Intent(this@DashboardActivity, Chat::class.java)
+            startActivity(intent)
+        }
+        graph.setOnClickListener {
+            val intent = Intent(this, GraphActivity::class.java)
             startActivity(intent)
         }
 
