@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 
 data class GoalData(
@@ -42,13 +43,16 @@ class CustomBarChartView @JvmOverloads constructor(
     var data = listOf<GoalData>()
         set(value) {
             field = value
+            Log.d("CustomBarChartView", "Data set: $value")
             invalidate() // Redraw the view with the new data
         }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        Log.d("CustomBarChartView", "onDraw called")
 
         if (data.isEmpty()) {
+            Log.d("CustomBarChartView", "No data to draw")
             return
         }
 
@@ -58,6 +62,7 @@ class CustomBarChartView @JvmOverloads constructor(
         val maxValue = getMaxValue()
 
         if (maxValue == 0f) {
+            Log.d("CustomBarChartView", "Max value is 0")
             return
         }
 
