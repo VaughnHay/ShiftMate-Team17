@@ -82,6 +82,7 @@
 
         <activity android:name=".FocusCategoryActivity"/>
         <activity android:name=".EndOfFocusActivity"/>
+        <activity android:name=".TaskDetailsActivity"></activity>
 
     </application>
 

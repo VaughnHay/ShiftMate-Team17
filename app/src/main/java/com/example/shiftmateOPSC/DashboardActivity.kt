@@ -51,6 +51,10 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var tasksRecyclerView: RecyclerView
     private lateinit var taskAdapter: TaskAdapter
     private val tasksList = mutableListOf<Task>()
+    private lateinit var taskDetailsButton: Button
+    private lateinit var goalsList: MutableList<String>
+
+
 
     //private val filteredTasksList = mutableListOf<Task>()
 
@@ -80,6 +84,10 @@ class DashboardActivity : AppCompatActivity() {
         filterButton = findViewById(R.id.filterButton)
         tasksRecyclerView = findViewById(R.id.taskRecyclerView)
         graph = findViewById(R.id.graphButton)
+        taskDetailsButton = findViewById(R.id.taskDetailsButton)
+        goalsList = mutableListOf()
+
+
 
         // Set click listeners
         myGoalsButton.setOnClickListener {
@@ -151,6 +159,11 @@ class DashboardActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+
+        taskDetailsButton.setOnClickListener {
+            val intent = Intent(this, TaskDetailsActivity::class.java)
+            startActivity(intent)
         }
 
         taskAdapter = TaskAdapter(tasksList)

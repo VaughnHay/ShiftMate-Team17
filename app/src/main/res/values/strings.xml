@@ -21,8 +21,8 @@
         <item>Developer</item>
     </string-array>
     <string name="_1_5_hrs">1,5 hrs</string>
-    <string name="project_x_details">Project X Details</string>
-    <string name="project_x_details_title">Project X Details</string>
+    <string name="project_x_details">Project Details</string>
+    <string name="project_x_details_title">Project Details</string>
     <string name="app_logo">APP LOGO</string>
     <string name="register">Register</string>
     <string name="register_title">Register</string>

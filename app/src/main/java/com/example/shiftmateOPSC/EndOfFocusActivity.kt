@@ -21,7 +21,7 @@ class EndOfFocusActivity : AppCompatActivity() {
         endMessageTextView.text = message
 
         continueButton.setOnClickListener {
-            val intent = Intent(this, DashboardActivity::class.java)
+            val intent = Intent(this, TaskDetailsActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -83,13 +83,20 @@ class MinMaxGoalAct : AppCompatActivity() {
         goalsRef.child(goalId).setValue(goal)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    fetchAllGoals()
                     val goalInfo = """
                         Name: $goalName
                         Min Hourly Goal: $minHourGoal
                         Max Hourly Goal: $maxHourGoal
                     """.trimIndent()
+
+                    /*val intent = Intent(this, TaskDetailsActivity::class.java).apply {
+                        putExtra("MIN_HOUR_GOAL", minHourGoal.toFloat())
+                        putExtra("MAX_HOUR_GOAL", maxHourGoal.toFloat())
+                    }*/
                     goalsList.add(goalInfo)
                     displayGoalTextView.text = getString(R.string.added_goal_template, goalName, minHourGoal, maxHourGoal)
+                    startActivity(intent)
                     Toast.makeText(this, "New goal added!", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Failed to add goal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -105,6 +112,7 @@ class MinMaxGoalAct : AppCompatActivity() {
         goalsRef.orderByChild("userId").equalTo(userId).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 goalsList.clear()
+                //val goalsList = mutableListOf<String>()
                 for (goalSnapshot in snapshot.children) {
                     val goal = goalSnapshot.getValue(Goal::class.java)
                     if (goal != null) {

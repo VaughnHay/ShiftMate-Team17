@@ -1,18 +1,6 @@
 package com.example.shiftmateOPSC
 
-import android.os.Bundle
-import android.widget.ProgressBar
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
-
-class TaskDetails : AppCompatActivity() {
+/*class TaskDetails : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private var minGoal: Int = 0
     private var maxGoal: Int = 0
@@ -22,7 +10,7 @@ class TaskDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.task_details_layout)
 
-        progressBar = findViewById(R.id.taskDetprogressBar1)
+       // progressBar = findViewById(R.id.taskDetprogressBar1)
 
         fetchUserGoalsAndData()
     }
@@ -92,3 +80,4 @@ class TaskDetails : AppCompatActivity() {
         progressBar.progress = progress
     }
 }
+*///
