@@ -28,7 +28,7 @@ class FocusCategoryActivity : AppCompatActivity() {
         firebaseDatabase = FirebaseDatabase.getInstance()
         categoryList = mutableListOf()
 
-        fetchCategoryDataForCurrentUser()
+        fetchGoalDataForCurrentUser()
 
         selectCategoryButton.setOnClickListener {
             val selectedCategory = categorySpinner.selectedItem.toString()
@@ -39,21 +39,24 @@ class FocusCategoryActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchCategoryDataForCurrentUser() {
+    private fun fetchGoalDataForCurrentUser() {
         val currentUser = firebaseAuth.currentUser
         currentUser?.uid?.let { userId ->
-            val tasksReference = firebaseDatabase.reference.child("TimeLog").child(userId)
-            tasksReference.addListenerForSingleValueEvent(object : ValueEventListener {
+            val goalsReference = firebaseDatabase.reference.child("Goals")
+            goalsReference.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    for (taskSnapshot in dataSnapshot.children) {
-                        val category = taskSnapshot.child("category").getValue(String::class.java)
-                        category?.let { categoryList.add(it) }
+                    for (goalSnapshot in dataSnapshot.children) {
+                        val goalUserId = goalSnapshot.child("userId").getValue(String::class.java)
+                        if (goalUserId == userId) {
+                            val goalName = goalSnapshot.child("goalName").getValue(String::class.java)
+                            goalName?.let { categoryList.add(it) }
+                        }
                     }
                     populateSpinner(categoryList)
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
-                    Log.e("FocusCategoryActivity", "Error fetching category data: ${databaseError.message}")
+                    Log.e("FocusCategoryActivity", "Error fetching goal data: ${databaseError.message}")
                 }
             })
         } ?: run {
